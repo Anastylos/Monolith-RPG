@@ -13,9 +13,20 @@ albedo_texture = ExtResource("2_hbpnh")
 material = SubResource("StandardMaterial3D_8w60s")
 size = Vector2(100, 100)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbpnh"]
+albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_135ne"]
+material = SubResource("StandardMaterial3D_hbpnh")
+size = Vector3(2, 15, 2)
+
 [node name="Node3D" type="Node3D" unique_id=174781509]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825494061]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6828029, -3.6431284, 1.3485585)
+[node name="ground_MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825494061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2924285, -7.387189, 3.8925307)
 material_override = SubResource("StandardMaterial3D_135ne")
 mesh = SubResource("PlaneMesh_v43eq")
+
+[node name="monolith_MeshInstance3D" type="MeshInstance3D" parent="." unique_id=108536899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8480928, 0)
+mesh = SubResource("BoxMesh_135ne")
