@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://g8u6a2uwcxuj"]
+
+[ext_resource type="Texture2D" uid="uid://dbe85gs5usxex" path="res://Enviroment/Assets/Materisl_PS_01/4k JPEG/Ground Sidewalk 02/GroundSidewalk02_Base Color.jpg" id="1_8w60s"]
+[ext_resource type="Texture2D" uid="uid://bc2a4qneugoa1" path="res://Enviroment/Assets/Materisl_PS_01/4k JPEG/Ground Sidewalk 02/GroundSidewalk02_Metallic.jpg" id="2_hbpnh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_135ne"]
+albedo_texture = ExtResource("1_8w60s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w60s"]
+albedo_texture = ExtResource("2_hbpnh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v43eq"]
+material = SubResource("StandardMaterial3D_8w60s")
+size = Vector2(100, 100)
+
+[node name="Node3D" type="Node3D" unique_id=174781509]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825494061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6828029, -3.6431284, 1.3485585)
+material_override = SubResource("StandardMaterial3D_135ne")
+mesh = SubResource("PlaneMesh_v43eq")
