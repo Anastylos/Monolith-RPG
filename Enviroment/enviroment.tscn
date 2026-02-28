@@ -28,5 +28,5 @@ material_override = SubResource("StandardMaterial3D_135ne")
 mesh = SubResource("PlaneMesh_v43eq")
 
 [node name="monolith_MeshInstance3D" type="MeshInstance3D" parent="." unique_id=108536899]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8480928, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34009194, 0)
 mesh = SubResource("BoxMesh_135ne")
