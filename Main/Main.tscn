@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://v86wkqavdp0x" path="res://Player/Player.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://g8u6a2uwcxuj" path="res://Enviroment/enviroment.tscn" id="2_amygn"]
+[ext_resource type="PackedScene" uid="uid://drt1u4wl7jo35" path="res://Enemies/Enemy_basic.tscn" id="3_amygn"]
 
 [node name="Main" type="Node3D" unique_id=115081074]
 
@@ -9,3 +10,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4048233, -8.249357)
 
 [node name="Player" parent="." unique_id=880187536 instance=ExtResource("2_83ytx")]
+
+[node name="EnemyBasic" parent="." unique_id=626898140 instance=ExtResource("3_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2594385, 0, -9.527454)
