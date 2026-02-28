@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://trm25ofed16f"]
 
-[ext_resource type="PackedScene" uid="uid://cngod8rsd368u" path="res://Main/Camera.tscn" id="1_83ytx"]
+[ext_resource type="PackedScene" uid="uid://v86wkqavdp0x" path="res://Player/Player.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://g8u6a2uwcxuj" path="res://Enviroment/enviroment.tscn" id="2_amygn"]
 
 [node name="Main" type="Node3D" unique_id=115081074]
 
-[node name="Camera" parent="." unique_id=966288588 instance=ExtResource("1_83ytx")]
-transform = Transform3D(-0.023883805, -0.0005962208, 0.99971455, -0.024955617, 0.99968857, 0, -0.9994032, -0.024948495, -0.023891246, 3.5307498, 0, 0)
-
 [node name="Node3D" parent="." unique_id=174781509 instance=ExtResource("2_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4048233, -8.249357)
+
+[node name="Player" parent="." unique_id=880187536 instance=ExtResource("2_83ytx")]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://v86wkqavdp0x"]
+
+[ext_resource type="PackedScene" uid="uid://cngod8rsd368u" path="res://Main/Camera.tscn" id="1_3qydi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tok1r"]
+
+[node name="Player" type="CharacterBody2D" unique_id=880187536]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=38266501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_q3lat")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1815854509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_tok1r")
+
+[node name="Camera" parent="." unique_id=966288588 instance=ExtResource("1_3qydi")]
+transform = Transform3D(1, 0, 0, 0, 0.9364765, -0.35073054, 0, 0.35073054, 0.9364765, 0, 3.2742915, -0.40154767)
