@@ -20,7 +20,7 @@ albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
 material = SubResource("StandardMaterial3D_hbpnh")
 size = Vector3(2, 15, 2)
 
-[node name="Node3D" type="Node3D" unique_id=174781509]
+[node name="enviroment_Node3D" type="Node3D" unique_id=174781509]
 
 [node name="ground_MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825494061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2924285, -7.387189, 3.8925307)
