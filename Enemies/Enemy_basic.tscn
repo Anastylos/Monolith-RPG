@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drt1u4wl7jo35"]
 
 [ext_resource type="Script" uid="uid://t61hwan6ry63" path="res://Enemies/enemy_character_body_3d.gd" id="1_r3c6h"]
+[ext_resource type="PackedScene" uid="uid://dmj30b87tpm4a" path="res://Enemies/Assets/skeletonmonster3dmodel.glb" id="2_dosrv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxk1r"]
 albedo_color = Color(0.8980392, 0.10980392, 0.12941177, 1)
@@ -17,8 +18,12 @@ script = ExtResource("1_r3c6h")
 
 [node name="enemy_MeshInstance3D" type="MeshInstance3D" parent="enemy_CharacterBody3D" unique_id=1111364260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99298096, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_dosrv")
 
 [node name="enemy_CollisionShape3D" type="CollisionShape3D" parent="enemy_CharacterBody3D" unique_id=37182542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9939097, 0)
 shape = SubResource("CapsuleShape3D_a3cie")
+
+[node name="skeletonmonster3dmodel" parent="enemy_CharacterBody3D" unique_id=1519451725 instance=ExtResource("2_dosrv")]
+transform = Transform3D(0.9996523, 0, -0.026368964, 0, 1, 0, 0.026368964, 0, 0.9996523, 0, 0.98678255, 0)
