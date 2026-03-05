@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://sm2t4db00vbr"]
 
+[ext_resource type="Script" uid="uid://b4brpdeyjk2qv" path="res://Enviroment/static_body_3d.gd" id="1_htcwa"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbpnh"]
 albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
 
@@ -13,7 +15,8 @@ data = PackedVector3Array(-1, 7.5, 1, 1, 7.5, 1, -1, -7.5, 1, 1, 7.5, 1, 1, -7.5
 [node name="monolith_MeshInstance3D" type="MeshInstance3D" unique_id=749077298]
 mesh = SubResource("BoxMesh_135ne")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=11801512]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=11801512]
+script = ExtResource("1_htcwa")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=853147393]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=853147393]
 shape = SubResource("ConcavePolygonShape3D_ahwgg")
