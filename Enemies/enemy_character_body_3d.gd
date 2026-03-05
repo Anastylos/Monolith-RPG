@@ -5,14 +5,21 @@ extends CharacterBody3D
 @export var wander_radius: float = 5.0
 @export var wander_timer: float = 2.0
 @export var max_health: int = 10
+@export var damage_mesh_path: NodePath
 
 var health: int
 var target_position: Vector3
 var time_until_next_wander: float = 1.0
-
+var damage_mesh: MeshInstance3D
 
 func _ready():
 	health = max_health
+	
+	if damage_mesh_path != NodePath():
+		damage_mesh = get_node_or_null(damage_mesh_path) as MeshInstance3D
+	if damage_mesh == null:
+		damage_mesh = find_child("*", true, false) as MeshInstance3D
+		
 	pick_new_target()
 
 
@@ -41,9 +48,10 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	print("Enemy took damage. Health:", health)
 
-	var mesh = $MeshInstance3D
-	if mesh and mesh.material_override:
-		mesh.material_override.albedo_color = Color(1, 0.4, 0.4)
+	if damage_mesh != null:
+		if damage_mesh.material_override == null:
+			damage_mesh.material_override = StandardMaterial3D.new()
+		damage_mesh.material_override.albedo_color = Color(1, 0.4, 0.4)
 
 	if health <= 0:
 		die()

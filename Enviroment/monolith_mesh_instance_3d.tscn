@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sm2t4db00vbr"]
 
-[ext_resource type="Script" uid="uid://b4brpdeyjk2qv" path="res://Enviroment/static_body_3d.gd" id="1_htcwa"]
+[ext_resource type="Script" uid="uid://b4brpdeyjk2qv" path="res://Enviroment/monolith_static_body_3d.gd" id="1_htcwa"]
+[ext_resource type="PackedScene" uid="uid://drt1u4wl7jo35" path="res://Enemies/Enemy_basic.tscn" id="2_ss5xb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbpnh"]
 albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
@@ -17,6 +18,7 @@ mesh = SubResource("BoxMesh_135ne")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=11801512]
 script = ExtResource("1_htcwa")
+enemy_scene = ExtResource("2_ss5xb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=853147393]
 shape = SubResource("ConcavePolygonShape3D_ahwgg")
