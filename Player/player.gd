@@ -6,6 +6,8 @@ const MOUSE_SENSITIVITY = 0.003
 const PITCH_MIN = -1.4
 const PITCH_MAX = 1.4
 const INTERACT_RANGE = 3.0
+const ATTACK_RANGE = 3.0
+const ATTACK_DAMAGE = 3
 
 @onready var look_pivot: Node3D = $LookPivot
 @onready var camera_pivot: Node3D = $LookPivot/CameraPivot
@@ -50,7 +52,28 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("attack"):
+		_try_attack()
 
+func _try_attack() -> void:
+	var space_state = get_world_3d().direct_space_state
+
+	var from = camera.global_position
+	var to = from + (-camera.global_transform.basis.z) * ATTACK_RANGE
+
+	var params := PhysicsRayQueryParameters3D.create(from, to)
+	params.collide_with_areas = true
+	params.collide_with_bodies = true
+	params.exclude = [self]
+
+	var hit := space_state.intersect_ray(params)
+	if hit.is_empty():
+		return
+
+	var collider = hit["collider"]
+	if collider != null and collider.has_method("take_damage"):
+		collider.take_damage(ATTACK_DAMAGE)
 
 func _try_interact() -> void:
 	var space_state = get_world_3d().direct_space_state
