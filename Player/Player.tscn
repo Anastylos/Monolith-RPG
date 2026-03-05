@@ -21,8 +21,10 @@ visible = false
 mesh = SubResource("CapsuleMesh_tok1r")
 skeleton = NodePath("")
 
-[node name="Camera" parent="." unique_id=966288588 instance=ExtResource("1_3qydi")]
-transform = Transform3D(1, 0, 0, 0, 0.9364765, -0.35073054, 0, 0.35073054, 0.9364765, 0, 3.2742915, -0.40154767)
-
 [node name="Male_Ranger" parent="." unique_id=770273856 instance=ExtResource("3_tok1r")]
 transform = Transform3D(-0.99959135, 0, 0.028584551, 0, 1, 0, -0.028584551, 0, -0.99959135, 0, 0, 0)
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1806717855]
+
+[node name="Camera3D" parent="CameraPivot" unique_id=966288588 instance=ExtResource("1_3qydi")]
+transform = Transform3D(1, 0, 0, 0, 0.9364765, -0.35073054, 0, 0.35073054, 0.9364765, 0, 3.2742915, -0.40154767)
