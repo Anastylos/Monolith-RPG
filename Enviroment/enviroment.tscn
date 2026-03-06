@@ -17,6 +17,27 @@ size = Vector2(100, 100)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5eavl"]
 data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
 
+[sub_resource type="Sky" id="Sky_ahwgg"]
+
+[sub_resource type="Environment" id="Environment_ahwgg"]
+background_mode = 2
+background_energy_multiplier = 6.84
+sky = SubResource("Sky_ahwgg")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0.58431375, 0, 1)
+ambient_light_energy = 6.01
+reflected_light_source = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.011764706, 0.56078434, 0.1882353, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0, 0.27058825, 0.011764706, 1)
+volumetric_fog_length = 15.0
+adjustment_enabled = true
+adjustment_brightness = 2.0
+adjustment_contrast = 1.13
+adjustment_saturation = 0.59
+
 [node name="enviroment_Node3D" type="Node3D" unique_id=174781509]
 
 [node name="ground_MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825494061]
@@ -30,3 +51,6 @@ shape = SubResource("ConcavePolygonShape3D_5eavl")
 
 [node name="monolith_MeshInstance3D" parent="." unique_id=749077298 instance=ExtResource("3_ahwgg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.061474, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=196633825]
+environment = SubResource("Environment_ahwgg")

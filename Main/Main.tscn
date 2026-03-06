@@ -6,10 +6,10 @@
 
 [node name="Main" type="Node3D" unique_id=115081074]
 
+[node name="enviroment_Node3D" parent="." unique_id=174781509 instance=ExtResource("2_amygn")]
+
 [node name="Player" parent="." unique_id=880187536 instance=ExtResource("2_83ytx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4147258, 0, 0)
 
 [node name="EnemyBasic" parent="." unique_id=626898140 instance=ExtResource("3_amygn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2594385, 0, -9.527454)
-
-[node name="enviroment_Node3D" parent="." unique_id=174781509 instance=ExtResource("2_amygn")]
