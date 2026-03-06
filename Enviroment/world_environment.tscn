@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dnvikeuamtoue"]
+
+[ext_resource type="Shader" uid="uid://e7hvxhwtkklx" path="res://Enviroment/new_shader.gdshader" id="1_37rtl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3120"]
+shader = ExtResource("1_37rtl")
+shader_parameter/aurora_color = Color(0.84, 0.84, 0.9, 1)
+shader_parameter/background_color1 = Color(0.05, 0.1, 0.2, 1)
+shader_parameter/background_color2 = Color(0.1, 0.05, 0.2, 1)
+shader_parameter/aurora_intensity = 1.8
+shader_parameter/star_brightness = 0.8
+
+[sub_resource type="Sky" id="Sky_37rtl"]
+sky_material = SubResource("ShaderMaterial_w3120")
+
+[sub_resource type="Environment" id="Environment_ahwgg"]
+background_mode = 2
+background_energy_multiplier = 6.84
+sky = SubResource("Sky_37rtl")
+ambient_light_color = Color(0, 0.58431375, 0, 1)
+ambient_light_energy = 6.01
+reflected_light_source = 2
+fog_enabled = true
+fog_light_color = Color(0.011764706, 0.35686275, 0.1882353, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0, 0.27058825, 0.011764706, 1)
+volumetric_fog_length = 15.0
+adjustment_enabled = true
+adjustment_brightness = 2.0
+adjustment_contrast = 1.13
+adjustment_saturation = 0.59
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=757410219]
+environment = SubResource("Environment_ahwgg")
