@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbe85gs5usxex" path="res://Enviroment/Assets/Materisl_PS_01/4k JPEG/Ground Sidewalk 02/GroundSidewalk02_Base Color.jpg" id="1_8w60s"]
 [ext_resource type="Texture2D" uid="uid://bc2a4qneugoa1" path="res://Enviroment/Assets/Materisl_PS_01/4k JPEG/Ground Sidewalk 02/GroundSidewalk02_Metallic.jpg" id="2_hbpnh"]
 [ext_resource type="PackedScene" uid="uid://sm2t4db00vbr" path="res://Enviroment/monolith_mesh_instance_3d.tscn" id="3_ahwgg"]
+[ext_resource type="PackedScene" uid="uid://dnvikeuamtoue" path="res://Enviroment/world_environment.tscn" id="4_qcwx2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_135ne"]
 albedo_texture = ExtResource("1_8w60s")
@@ -18,6 +19,8 @@ size = Vector2(100, 100)
 data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
 
 [node name="enviroment_Node3D" type="Node3D" unique_id=174781509]
+
+[node name="WorldEnvironment" parent="." unique_id=757410219 instance=ExtResource("4_qcwx2")]
 
 [node name="ground_MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825494061]
 material_override = SubResource("StandardMaterial3D_135ne")
