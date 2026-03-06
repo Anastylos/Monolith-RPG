@@ -22,3 +22,31 @@ enemy_scene = ExtResource("2_ss5xb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=853147393]
 shape = SubResource("ConcavePolygonShape3D_ahwgg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1297511534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10314572, 4.269002, 1.3908113)
+light_color = Color(0.8819871, 1, 0.8733757, 1)
+light_size = 0.155
+shadow_enabled = true
+omni_range = 187.754
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=692407388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2005973, 3.453246, 0.049813747)
+light_color = Color(0.82442695, 1, 0.8130753, 1)
+light_size = 0.155
+shadow_enabled = true
+omni_range = 187.754
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=675641734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43746865, 4.859036, -2.768756)
+light_color = Color(0.85377604, 0.9999997, 0.8433429, 1)
+light_size = 0.155
+shadow_enabled = true
+omni_range = 187.754
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=633035431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7409005, 2.7775779, 0)
+light_color = Color(0.8393694, 0.9999997, 0.8279129, 1)
+light_size = 0.155
+shadow_enabled = true
+omni_range = 187.754

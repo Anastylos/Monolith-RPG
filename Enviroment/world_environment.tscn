@@ -2,21 +2,24 @@
 
 [ext_resource type="Shader" uid="uid://e7hvxhwtkklx" path="res://Enviroment/new_shader.gdshader" id="1_37rtl"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3120"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_37rtl"]
 shader = ExtResource("1_37rtl")
-shader_parameter/aurora_color = Color(0.84, 0.84, 0.9, 1)
+shader_parameter/aurora_color = Color(0.28235295, 0.8392157, 0.9019608, 1)
 shader_parameter/background_color1 = Color(0.05, 0.1, 0.2, 1)
 shader_parameter/background_color2 = Color(0.1, 0.05, 0.2, 1)
 shader_parameter/aurora_intensity = 1.8
 shader_parameter/star_brightness = 0.8
 
 [sub_resource type="Sky" id="Sky_37rtl"]
-sky_material = SubResource("ShaderMaterial_w3120")
+sky_material = SubResource("ShaderMaterial_37rtl")
+process_mode = 3
+radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_ahwgg"]
 background_mode = 2
 background_energy_multiplier = 6.84
 sky = SubResource("Sky_37rtl")
+ambient_light_source = 1
 ambient_light_color = Color(0, 0.58431375, 0, 1)
 ambient_light_energy = 6.01
 reflected_light_source = 2
