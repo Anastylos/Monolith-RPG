@@ -6,12 +6,11 @@ const MOUSE_SENSITIVITY = 0.003
 const PITCH_MIN = -1.4
 const PITCH_MAX = 1.4
 const INTERACT_RANGE = 3.0
-const ATTACK_RANGE = 3.0
-const ATTACK_DAMAGE = 3
 
 @onready var look_pivot: Node3D = $LookPivot
 @onready var camera_pivot: Node3D = $LookPivot/CameraPivot
 @onready var camera: Camera3D = $LookPivot/CameraPivot/Camera3D
+@onready var attack: Attack = $Attack/BasicAttack
 
 var pitch := 0.0
 
@@ -19,6 +18,7 @@ var pitch := 0.0
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera.make_current()
+	_configure_attack()
 
 
 func _input(event: InputEvent) -> void:
@@ -38,8 +38,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("interact"):
-		print("E pressed")
 		_try_interact()
+
+	if Input.is_action_just_pressed("attack") and attack != null:
+		attack.execute(self)
 
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -52,28 +54,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
-	if Input.is_action_just_pressed("attack"):
-		_try_attack()
 
-func _try_attack() -> void:
-	var space_state = get_world_3d().direct_space_state
-
-	var from = camera.global_position
-	var to = from + (-camera.global_transform.basis.z) * ATTACK_RANGE
-
-	var params := PhysicsRayQueryParameters3D.create(from, to)
-	params.collide_with_areas = true
-	params.collide_with_bodies = true
-	params.exclude = [self]
-
-	var hit := space_state.intersect_ray(params)
-	if hit.is_empty():
-		return
-
-	var collider = hit["collider"]
-	if collider != null and collider.has_method("take_damage"):
-		collider.take_damage(ATTACK_DAMAGE)
 
 func _try_interact() -> void:
 	var space_state = get_world_3d().direct_space_state
@@ -98,3 +79,15 @@ func _try_interact() -> void:
 		collider.interact(self)
 	else:
 		print("Hit has no interact()")
+
+
+func _configure_attack() -> void:
+	if attack == null:
+		push_warning("Player is missing Attack/BasicAttack node.")
+		return
+
+	# Default basic attack to camera-driven raycast if not set in scene.
+	if attack.origin_node == null:
+		attack.origin_node = camera
+	if attack.direction_node == null:
+		attack.direction_node = camera
