@@ -12,6 +12,8 @@ var target_position: Vector3
 var time_until_next_wander: float = 1.0
 var damage_mesh: MeshInstance3D
 
+enum DamageType { FIRE, ICE, LIGHTNING, STANDARD }
+
 func _ready():
 	health = max_health
 	
@@ -44,7 +46,7 @@ func pick_new_target():
 	time_until_next_wander = wander_timer
 
 
-func take_damage(amount: int) -> void:
+func take_damage(amount: int, damage_type : DamageType) -> void:
 	health -= amount
 	print("Enemy took damage. Health:", health)
 
@@ -55,6 +57,14 @@ func take_damage(amount: int) -> void:
 
 	if health <= 0:
 		die()
+
+	match damage_type:
+		DamageType.FIRE:
+			add_to_group("fire")
+		DamageType.ICE:
+			add_to_group("ice")
+		DamageType.LIGHTNING:
+			add_to_group("lightning")
 
 
 func die() -> void:
