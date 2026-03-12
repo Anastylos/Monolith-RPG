@@ -1,20 +1,26 @@
 [gd_scene format=3 uid="uid://sm2t4db00vbr"]
 
+[ext_resource type="Texture2D" uid="uid://bg2lnhwqb6ht" path="res://Enviroment/Assets/bluish-black-stone-textured-background.jpg" id="1_gwrkf"]
 [ext_resource type="Script" uid="uid://b4brpdeyjk2qv" path="res://Enviroment/monolith_static_body_3d.gd" id="1_htcwa"]
 [ext_resource type="PackedScene" uid="uid://drt1u4wl7jo35" path="res://Enemies/Enemy_basic.tscn" id="2_ss5xb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbpnh"]
 albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+albedo_texture = ExtResource("1_gwrkf")
 
 [sub_resource type="BoxMesh" id="BoxMesh_135ne"]
 material = SubResource("StandardMaterial3D_hbpnh")
 size = Vector3(2, 15, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwrkf"]
+albedo_texture = ExtResource("1_gwrkf")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ahwgg"]
 data = PackedVector3Array(-1, 7.5, 1, 1, 7.5, 1, -1, -7.5, 1, 1, 7.5, 1, 1, -7.5, 1, -1, -7.5, 1, 1, 7.5, -1, -1, 7.5, -1, 1, -7.5, -1, -1, 7.5, -1, -1, -7.5, -1, 1, -7.5, -1, 1, 7.5, 1, 1, 7.5, -1, 1, -7.5, 1, 1, 7.5, -1, 1, -7.5, -1, 1, -7.5, 1, -1, 7.5, -1, -1, 7.5, 1, -1, -7.5, -1, -1, 7.5, 1, -1, -7.5, 1, -1, -7.5, -1, 1, 7.5, 1, -1, 7.5, 1, 1, 7.5, -1, -1, 7.5, 1, -1, 7.5, -1, 1, 7.5, -1, -1, -7.5, 1, 1, -7.5, 1, -1, -7.5, -1, 1, -7.5, 1, 1, -7.5, -1, -1, -7.5, -1)
 
 [node name="monolith_MeshInstance3D" type="MeshInstance3D" unique_id=749077298]
 mesh = SubResource("BoxMesh_135ne")
+surface_material_override/0 = SubResource("StandardMaterial3D_gwrkf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=11801512]
 script = ExtResource("1_htcwa")
