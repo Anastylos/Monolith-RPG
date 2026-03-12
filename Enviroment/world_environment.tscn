@@ -12,6 +12,12 @@ sky_material = SubResource("PanoramaSkyMaterial_xx2yg")
 background_mode = 2
 sky = SubResource("Sky_xx2yg")
 ambient_light_sky_contribution = 0.06
+fog_light_color = Color(0.0068405312, 0.008325005, 0.011061801, 1)
+fog_light_energy = 0.0
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 1.0
+fog_height_density = 0.3
 
 [node name="WorldEnvironment" type="WorldEnvironment" unique_id=757410219]
 environment = SubResource("Environment_65sid")
