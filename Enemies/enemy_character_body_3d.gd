@@ -49,7 +49,6 @@ func pick_new_target():
 func take_damage(amount: int) -> void:
 	health -= amount
 	print("Enemy took damage. Health:", health)
-
 	if damage_mesh != null:
 		if damage_mesh.material_override == null:
 			damage_mesh.material_override = StandardMaterial3D.new()

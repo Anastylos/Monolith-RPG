@@ -68,11 +68,16 @@ func _apply_hit(hit: Dictionary) -> void:
 			collider.take_damage_type(get_damage_type())
 			
 func get_damage_type() -> DamageType:
+	print("Current damage groups: ", damage_groups)
 	if "fire" in damage_groups:
+		print("attacking with fire")
 		return DamageType.FIRE
 	elif "ice" in damage_groups:
+		print("attacking with ice")
 		return DamageType.ICE
 	elif "lightning" in damage_groups:
+		print("attacking with lightning")
 		return DamageType.LIGHTNING
 	else:
+		print("attacking with normal attack")
 		return DamageType.STANDARD
