@@ -11,6 +11,7 @@ sky_material = SubResource("PanoramaSkyMaterial_xx2yg")
 [sub_resource type="Environment" id="Environment_65sid"]
 background_mode = 2
 sky = SubResource("Sky_xx2yg")
+ambient_light_sky_contribution = 0.16
 
 [node name="WorldEnvironment" type="WorldEnvironment" unique_id=757410219]
 environment = SubResource("Environment_65sid")
