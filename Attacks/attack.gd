@@ -14,6 +14,8 @@ class_name Attack
 @export var collide_with_areas: bool = true
 @export var collide_with_bodies: bool = true
 
+@export var damage_groups: Array[String] = []
+
 var _cooldown_left: float = 0.0
 
 enum DamageType { FIRE, ICE, LIGHTNING, STANDARD }
@@ -59,5 +61,18 @@ func execute(owner: Node3D) -> bool:
 
 func _apply_hit(hit: Dictionary) -> void:
 	var collider = hit.get("collider")
-	if collider != null and collider.has_method("take_damage"):
-		collider.take_damage(attack_damage, DamageType.ICE)
+	if collider != null:
+		if collider.has_method("take_damage"):
+			collider.take_damage(attack_damage)
+		if collider != null and collider.has_method("take_damage_type"):
+			collider.take_damage_type(get_damage_type())
+			
+func get_damage_type() -> DamageType:
+	if "fire" in damage_groups:
+		return DamageType.FIRE
+	elif "ice" in damage_groups:
+		return DamageType.ICE
+	elif "lightning" in damage_groups:
+		return DamageType.LIGHTNING
+	else:
+		return DamageType.STANDARD

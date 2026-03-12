@@ -46,7 +46,7 @@ func pick_new_target():
 	time_until_next_wander = wander_timer
 
 
-func take_damage(amount: int, damage_type : DamageType) -> void:
+func take_damage(amount: int) -> void:
 	health -= amount
 	print("Enemy took damage. Health:", health)
 
@@ -58,6 +58,8 @@ func take_damage(amount: int, damage_type : DamageType) -> void:
 	if health <= 0:
 		die()
 
+			
+func take_damage_type(damage_type : DamageType) -> void:
 	match damage_type:
 		DamageType.FIRE:
 			add_to_group("fire")

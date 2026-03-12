@@ -3,13 +3,8 @@
 [ext_resource type="Script" uid="uid://4035jmlk31qn" path="res://Attacks/attack.gd" id="1_q7075"]
 [ext_resource type="Script" uid="uid://der6mvsifa1ly" path="res://Attacks/basic_attack.gd" id="2_nk6y0"]
 
-[node name="Attack" type="Node3D" unique_id=877467875]
+[node name="Attack" type="Node3D" unique_id=877467875 groups=["fire"]]
 script = ExtResource("1_q7075")
-attack_range = null
-attack_damage = null
-cooldown = null
-collide_with_areas = null
-collide_with_bodies = null
 
 [node name="BasicAttack" type="Node3D" parent="." unique_id=1506111115]
 script = ExtResource("2_nk6y0")
