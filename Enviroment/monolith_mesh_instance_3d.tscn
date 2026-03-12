@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bg2lnhwqb6ht" path="res://Enviroment/Assets/bluish-black-stone-textured-background.jpg" id="1_gwrkf"]
 [ext_resource type="Script" uid="uid://b4brpdeyjk2qv" path="res://Enviroment/monolith_static_body_3d.gd" id="1_htcwa"]
 [ext_resource type="PackedScene" uid="uid://drt1u4wl7jo35" path="res://Enemies/Enemy_basic.tscn" id="2_ss5xb"]
+[ext_resource type="PackedScene" uid="uid://op737fr8rdmb" path="res://Enviroment/monolithLightomni_light_3d.tscn" id="4_jv5r3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbpnh"]
 albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
@@ -10,7 +11,8 @@ albedo_texture = ExtResource("1_gwrkf")
 
 [sub_resource type="BoxMesh" id="BoxMesh_135ne"]
 material = SubResource("StandardMaterial3D_hbpnh")
-size = Vector3(2, 15, 2)
+size = Vector3(4, 15, 4)
+subdivide_height = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwrkf"]
 albedo_texture = ExtResource("1_gwrkf")
@@ -27,32 +29,65 @@ script = ExtResource("1_htcwa")
 enemy_scene = ExtResource("2_ss5xb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=853147393]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ahwgg")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1297511534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10314572, 4.269002, 1.3908113)
-light_color = Color(0.8819871, 1, 0.8733757, 1)
-light_size = 0.155
-shadow_enabled = true
-omni_range = 187.754
+[node name="OmniLight3D" parent="." unique_id=1085996460 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10314572, 4.269002, 2.7723055)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=692407388]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2005973, 3.453246, 0.049813747)
-light_color = Color(0.82442695, 1, 0.8130753, 1)
-light_size = 0.155
-shadow_enabled = true
-omni_range = 187.754
+[node name="OmniLight3D5" parent="." unique_id=919881456 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.349494, 2.7927527)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=675641734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43746865, 4.859036, -2.768756)
-light_color = Color(0.85377604, 0.9999997, 0.8433429, 1)
-light_size = 0.155
-shadow_enabled = true
-omni_range = 187.754
+[node name="OmniLight3D5" parent="OmniLight3D5" unique_id=1071108240 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=633035431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7409005, 2.7775779, 0)
-light_color = Color(0.8393694, 0.9999997, 0.8279129, 1)
-light_size = 0.155
-shadow_enabled = true
-omni_range = 187.754
+[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D5" unique_id=1029393179 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
+
+[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D5/OmniLight3D5" unique_id=153472560 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
+
+[node name="OmniLight3D" parent="OmniLight3D5" unique_id=899441180 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6028738, 1.806715, -3.6352339)
+
+[node name="OmniLight3D6" parent="OmniLight3D5" unique_id=1215869242 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1734467, -0.11279297, -3.4025984)
+
+[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D6" unique_id=15653784 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
+
+[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D6/OmniLight3D5" unique_id=1450876917 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
+
+[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D6/OmniLight3D5/OmniLight3D5" unique_id=1122145400 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
+
+[node name="OmniLight3D2" parent="." unique_id=1068831621 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7772782, 4.5995445, -2.4904509)
+
+[node name="OmniLight3D2" parent="OmniLight3D2" unique_id=336311701 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54653764, -2.1333456, 0.048096657)
+
+[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D2" unique_id=1922484395 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.023145, -2.1333456, 0.048096657)
+
+[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D2/OmniLight3D2" unique_id=1731514331 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59906363, -2.1333456, 0.048096657)
+
+[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D2/OmniLight3D2/OmniLight3D2" unique_id=933968675 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13068986, -2.1333456, 0.048096657)
+
+[node name="OmniLight3D3" parent="OmniLight3D2" unique_id=435757390 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2181435, -0.86356163, -0.09464979)
+
+[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3" unique_id=1573814305 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54653764, -2.1333456, 0.048096657)
+
+[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3/OmniLight3D2" unique_id=1167470537 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.023145, -2.1333456, 0.048096657)
+
+[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3/OmniLight3D2/OmniLight3D2" unique_id=1392064784 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59906363, -2.1333456, 0.048096657)
+
+[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3/OmniLight3D2/OmniLight3D2/OmniLight3D2" unique_id=543797905 instance=ExtResource("4_jv5r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13068986, -2.1333456, 0.048096657)
