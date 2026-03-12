@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnvikeuamtoue"]
 
-[ext_resource type="Texture2D" uid="uid://cckab3r2whxvf" path="res://Enviroment/Assets/rogland_clear_night_4k.png" id="1_37rtl"]
+[ext_resource type="Texture2D" uid="uid://7gx35uqwgb2t" path="res://Enviroment/Assets/rogland_clear_night_4kCopy.png" id="1_37rtl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xx2yg"]
 panorama = ExtResource("1_37rtl")
