@@ -33,8 +33,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4846033, 0)
 transform = Transform3D(1, 0, 0, 0, 0.9147624, 0.40399235, 0, -0.40399235, 0.9147624, 0, 0.48712516, 0.7865646)
 
 [node name="Attack" parent="." unique_id=877467875 instance=ExtResource("3_ddoul")]
-attack_range = null
-attack_damage = null
-cooldown = null
-collide_with_areas = null
-collide_with_bodies = null
+attack_range = 3.0
+attack_damage = 3
+cooldown = 0.3
+collide_with_areas = true
+collide_with_bodies = true

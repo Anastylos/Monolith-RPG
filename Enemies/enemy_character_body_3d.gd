@@ -61,10 +61,13 @@ func take_damage(amount: int, damage_type : DamageType) -> void:
 	match damage_type:
 		DamageType.FIRE:
 			add_to_group("fire")
+			print("enemy attacked with fire")
 		DamageType.ICE:
 			add_to_group("ice")
+			print("enemy attacked with ice")
 		DamageType.LIGHTNING:
 			add_to_group("lightning")
+			print("enemy attacked with lightning")
 
 
 func die() -> void:

@@ -16,6 +16,8 @@ class_name Attack
 
 var _cooldown_left: float = 0.0
 
+enum DamageType { FIRE, ICE, LIGHTNING, STANDARD }
+
 
 func _physics_process(delta: float) -> void:
 	if _cooldown_left > 0.0:
@@ -58,4 +60,4 @@ func execute(owner: Node3D) -> bool:
 func _apply_hit(hit: Dictionary) -> void:
 	var collider = hit.get("collider")
 	if collider != null and collider.has_method("take_damage"):
-		collider.take_damage(attack_damage, ICE)
+		collider.take_damage(attack_damage, DamageType.ICE)
