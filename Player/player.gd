@@ -10,7 +10,7 @@ const INTERACT_RANGE = 3.0
 @onready var look_pivot: Node3D = $LookPivot
 @onready var camera_pivot: Node3D = $LookPivot/CameraPivot
 @onready var camera: Camera3D = $LookPivot/CameraPivot/Camera3D
-@onready var attack: Attack = $Attack/BasicAttack
+@onready var attack: Attack = $Attack
 
 var pitch := 0.0
 
@@ -83,7 +83,7 @@ func _try_interact() -> void:
 
 func _configure_attack() -> void:
 	if attack == null:
-		push_warning("Player is missing Attack/BasicAttack node.")
+		push_warning("Player is missing Attack node.")
 		return
 
 	# Default basic attack to camera-driven raycast if not set in scene.

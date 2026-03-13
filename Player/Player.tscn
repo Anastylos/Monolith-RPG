@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://v86wkqavdp0x"]
 
 [ext_resource type="Script" uid="uid://p0typnmssdc6" path="res://Player/player.gd" id="1_q3lat"]
-[ext_resource type="PackedScene" uid="uid://jgx5dntlc7he" path="res://Attacks/attack.tscn" id="3_ddoul"]
+[ext_resource type="PackedScene" path="res://Attacks/lightning_attack.tscn" id="3_ddoul"]
 [ext_resource type="PackedScene" uid="uid://bjy2axb2xpsdk" path="res://Player/Modular Character Outfits - Fantasy[Standard]/Exports/glTF (Godot-Unreal)/Outfits/Male_Ranger.gltf" id="3_tok1r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
@@ -33,8 +33,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4846033, 0)
 transform = Transform3D(1, 0, 0, 0, 0.9147624, 0.40399235, 0, -0.40399235, 0.9147624, 0, 0.48712516, 0.7865646)
 
 [node name="Attack" parent="." unique_id=877467875 instance=ExtResource("3_ddoul")]
-attack_range = 3.0
-attack_damage = 3
-cooldown = 0.3
 collide_with_areas = true
 collide_with_bodies = true

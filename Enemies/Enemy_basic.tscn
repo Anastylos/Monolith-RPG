@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drt1u4wl7jo35"]
 
-[ext_resource type="Script" uid="uid://t61hwan6ry63" path="res://Enemies/enemy_character_body_3d.gd" id="1_r3c6h"]
+[ext_resource type="Script" path="res://Enemies/wander_enemy.gd" id="1_r3c6h"]
 [ext_resource type="PackedScene" uid="uid://dmj30b87tpm4a" path="res://Enemies/Assets/skeletonmonster3dmodel.glb" id="2_dosrv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxk1r"]
