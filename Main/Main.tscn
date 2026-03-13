@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://trm25ofed16f"]
 
+[ext_resource type="Script" uid="uid://k4tp81il7bfr" path="res://Main/main.gd" id="1_6aewd"]
 [ext_resource type="PackedScene" uid="uid://v86wkqavdp0x" path="res://Player/Player.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://g8u6a2uwcxuj" path="res://Enviroment/enviroment.tscn" id="2_amygn"]
 [ext_resource type="PackedScene" uid="uid://drt1u4wl7jo35" path="res://Enemies/Enemy_basic.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://d0kopskd0mc2c" path="res://UI/pause_menu.tscn" id="4_ps1la"]
-[ext_resource type="Script" uid="uid://k2b5oyx6cnr4" path="res://UI/pause_menu.gd" id="5_6aewd"]
+[ext_resource type="Script" uid="uid://1mxdpoyob13n" path="res://addons/sprouty_dialogs/nodes/dialog_player.gd" id="6_hh5pf"]
+[ext_resource type="Resource" uid="uid://dfjpwsgj77x4" path="res://Story/dialogue_data.tres" id="7_qg80j"]
 
 [node name="Main" type="Node3D" unique_id=115081074]
+script = ExtResource("1_6aewd")
 
 [node name="enviroment_Node3D" parent="." unique_id=174781509 instance=ExtResource("2_amygn")]
 
@@ -17,4 +20,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4147258, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2594385, 0, -9.527454)
 
 [node name="PauseMenu" parent="." unique_id=2036089362 instance=ExtResource("4_ps1la")]
-script = ExtResource("5_6aewd")
+
+[node name="DialogPlayer" type="Node" parent="." unique_id=1643490273]
+script = ExtResource("6_hh5pf")
+_dialog_data_uid = 221462843133985403
+_dialog_file_name = "dialogue_data"
+_dialog_data = ExtResource("7_qg80j")
+_start_id = "FIRST"
+_play_on_ready = true
+_destroy_on_end = true
+_print_debug = false
+metadata/_custom_type_script = "uid://1mxdpoyob13n"

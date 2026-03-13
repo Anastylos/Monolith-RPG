@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="SproutyDialogsDialogueData" format=3 uid="uid://dfjpwsgj77x4"]
+
+[ext_resource type="Script" uid="uid://cbjdca3iwlx36" path="res://addons/sprouty_dialogs/resources/dialogue_data.gd" id="1_11vo8"]
+
+[resource]
+script = ExtResource("1_11vo8")
+graph_data = {
+"FIRST": {
+"dialogue_node_1": {
+"char_expand": true,
+"character": "",
+"dialog_key": "FIRST_DIALOG_1",
+"node_index": 1,
+"node_type": "dialogue_node",
+"offset": Vector2(-116.0504, 208.63469),
+"portrait": "",
+"size": Vector2(250.00012, 394.00006),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"start_node_1": {
+"node_index": 1,
+"node_type": "start_node",
+"offset": Vector2(-540, 160),
+"size": Vector2(190.00009, 97.000015),
+"start_id": "FIRST",
+"to_dialog": "",
+"to_node": ["dialogue_node_1"]
+}
+}
+}
+dialogs = {
+"FIRST_DIALOG_1": {
+"default": "[color=408070ff]What have you done? You awakend what was suposed to sleep. The monolith has tasted your soul. Now it will not stop untill it has consumed you.
+Do you remember who you are and why you are here?[/color]",
+"en": ""
+}
+}
+characters = {
+"FIRST": {}
+}

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cxr6iy4y85a0n"]
+
+[ext_resource type="Script" uid="uid://1mxdpoyob13n" path="res://addons/sprouty_dialogs/nodes/dialog_player.gd" id="1_bq5sb"]
+[ext_resource type="Resource" uid="uid://dfjpwsgj77x4" path="res://Story/dialogue_data.tres" id="2_c7img"]
+
+[node name="Story" type="Node2D" unique_id=1205873799]
+
+[node name="DialogPlayer" type="Node" parent="." unique_id=2024251392]
+script = ExtResource("1_bq5sb")
+_dialog_data_uid = 221462843133985403
+_dialog_file_name = "dialogue_data"
+_dialog_data = ExtResource("2_c7img")
+_start_id = "FIRST"
+_play_on_ready = true
+_destroy_on_end = true
+_print_debug = false
+metadata/_custom_type_script = "uid://1mxdpoyob13n"

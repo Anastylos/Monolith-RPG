@@ -58,8 +58,8 @@ translation/characters/character_names_csv=-1
 translation/localization/default_locale="en"
 translation/localization/locales=["en"]
 variables/variables={}
-internal/play_dialog_path=""
-internal/play_start_id=""
+internal/play_dialog_path="res://Story/firstDialogue.tres"
+internal/play_start_id="INTRODUCTION"
 
 [input]
 
