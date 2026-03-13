@@ -18,9 +18,48 @@ config/name="Monolith-RPG"
 run/main_scene="uid://trm25ofed16f"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+SproutyDialogs="*uid://c8gxm75j80u8c"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sprouty_dialogs/plugin.cfg")
+
 [filesystem]
 
 import/blender/enabled=false
+
+[graph_dialogs]
+
+general/input/continue_input_action="dialogs_continue_action"
+general/defaults/default_dialog_box=1568908516147823318
+general/defaults/default_portrait_scene=5003988533333559685
+general/canvas/dialog_box_canvas_layer=2
+general/canvas/portraits_canvas_layer=1
+general/custom/use_custom_event_nodes=false
+general/custom/custom_event_nodes_folder=""
+general/custom/custom_event_interpreter=-1
+text/default_typing_speed=0.05
+text/open_url_on_meta_tag_click=true
+text/display/new_line_as_new_dialog=true
+text/display/split_dialog_by_max_characters=false
+text/display/max_characters=0
+text/skip/allow_skip_text_reveal=true
+text/skip/can_skip_delay=0.1
+text/skip/continue_delay=0.1
+translation/enable_translations=false
+translation/csv_files/use_csv_files=false
+translation/csv_files/csv_translations_folder=""
+translation/csv_files/fallback_to_resource=true
+translation/characters/translate_character_names=false
+translation/characters/use_csv_for_character_names=false
+translation/characters/character_names_csv=-1
+translation/localization/default_locale="en"
+translation/localization/locales=["en"]
+variables/variables={}
+internal/play_dialog_path=""
+internal/play_start_id=""
 
 [input]
 
@@ -63,5 +102,13 @@ interact={
 attack={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(175, 13),"global_position":Vector2(184, 61),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+dialogs_continue_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
