@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://dols4gqjh3n6g"]
+
+[ext_resource type="Script" uid="uid://buomet8kjtn54" path="res://addons/sprouty_dialogs/editor/modules/variables/components/scripts/variable_item.gd" id="1_bg4en"]
+[ext_resource type="Texture2D" uid="uid://dr1gdp63atsvl" path="res://addons/sprouty_dialogs/editor/icons/interactable/drag-handle.svg" id="2_bg4en"]
+[ext_resource type="Texture2D" uid="uid://by1ux7iacms26" path="res://addons/sprouty_dialogs/editor/icons/variable.svg" id="3_re83m"]
+[ext_resource type="StyleBox" uid="uid://dfa36wxs72oc0" path="res://addons/sprouty_dialogs/editor/theme/empty_panel.tres" id="4_l5q3k"]
+
+[sub_resource type="DPITexture" id="DPITexture_li462"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#ff5d5d\" d=\"M2 1v8.586l1.293-1.293a1 1 0 0 1 1.414 0L7 10.587l2.293-2.293a1 1 0 0 1 1.414 0L13 10.586l1-1V6H9V1H2zm8 0v4h4zm-6 9.414-2 2V15h12v-2.586l-.293.293a1 1 0 0 1-1.414 0L10 10.414l-2.293 2.293a1 1 0 0 1-1.414 0L4 10.414z\"/></svg>
+"
+
+[node name="VariableItem" type="PanelContainer"]
+offset_right = 440.0
+offset_bottom = 50.0
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("4_l5q3k")
+script = ExtResource("1_bg4en")
+
+[node name="Container" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="DragButton" type="Button" parent="Container"]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+icon = ExtResource("2_bg4en")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="Container"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_re83m")
+stretch_mode = 3
+
+[node name="NameInput" type="LineEdit" parent="Container"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "New Variable"
+placeholder_text = "Variable name..."
+
+[node name="--" type="VSeparator" parent="Container"]
+layout_mode = 2
+
+[node name="TypeField" type="PanelContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("4_l5q3k")
+
+[node name="---" type="VSeparator" parent="Container"]
+layout_mode = 2
+
+[node name="ValueField" type="PanelContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_l5q3k")
+
+[node name="ModifiedIndicator" type="Label" parent="Container"]
+visible = false
+layout_mode = 2
+tooltip_text = "Unsaved changes"
+mouse_filter = 1
+text = "(*)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RemoveButton" type="Button" parent="Container"]
+layout_mode = 2
+icon = SubResource("DPITexture_li462")
+flat = true
+
+[node name="DropHighlight" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 0
+color = Color(0, 0, 0, 1)

@@ -14,8 +14,6 @@ class_name Attack
 @export var collide_with_areas: bool = true
 @export var collide_with_bodies: bool = true
 
-@export var damage_groups: Array[String] = []
-
 var _cooldown_left: float = 0.0
 
 enum DamageType { FIRE, ICE, LIGHTNING, STANDARD }
@@ -68,14 +66,14 @@ func _apply_hit(hit: Dictionary) -> void:
 			collider.take_damage_type(get_damage_type())
 			
 func get_damage_type() -> DamageType:
-	print("Current damage groups: ", damage_groups)
-	if "fire" in damage_groups:
+	print("Groups this attack is in:", get_groups())
+	if is_in_group("fire"):
 		print("attacking with fire")
 		return DamageType.FIRE
-	elif "ice" in damage_groups:
+	elif is_in_group("ice"):
 		print("attacking with ice")
 		return DamageType.ICE
-	elif "lightning" in damage_groups:
+	elif is_in_group("lightning"):
 		print("attacking with lightning")
 		return DamageType.LIGHTNING
 	else:
