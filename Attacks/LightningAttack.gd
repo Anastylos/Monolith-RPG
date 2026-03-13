@@ -19,7 +19,7 @@ func _ready() -> void:
 	damage_groups = ["lightning"]
 
 
-func execute(owner: Node3D) -> bool:
+func execute(caster: Node3D) -> bool:
 	if not can_attack():
 		return false
 
@@ -27,7 +27,7 @@ func execute(owner: Node3D) -> bool:
 		push_warning("LightningAttack is missing origin_node or direction_node.")
 		return false
 
-	var hits := _multi_beam_raycast(owner)
+	var hits := _multi_beam_raycast(caster)
 	if hits.is_empty():
 		_cooldown_left = cooldown
 		return false
@@ -49,7 +49,7 @@ func execute(owner: Node3D) -> bool:
 	return true
 
 
-func _multi_beam_raycast(owner: Node3D) -> Array:
+func _multi_beam_raycast(caster: Node3D) -> Array:
 	var results: Array = []
 	var space_state := get_world_3d().direct_space_state
 	var from := origin_node.global_position
@@ -72,7 +72,7 @@ func _multi_beam_raycast(owner: Node3D) -> Array:
 		var params := PhysicsRayQueryParameters3D.create(from, to)
 		params.collide_with_areas = collide_with_areas
 		params.collide_with_bodies = collide_with_bodies
-		params.exclude = [owner]
+		params.exclude = [caster]
 
 		var hit := space_state.intersect_ray(params)
 

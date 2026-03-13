@@ -34,7 +34,7 @@ func can_attack() -> bool:
 	return _cooldown_left <= 0.0
 
 
-func execute(owner: Node3D) -> bool:
+func execute(caster: Node3D) -> bool:
 	if not can_attack():
 		return false
 
@@ -42,7 +42,7 @@ func execute(owner: Node3D) -> bool:
 		push_warning("Attack is missing origin_node or direction_node.")
 		return false
 
-	var hit := _raycast(owner)
+	var hit := _raycast(caster)
 	if hit.is_empty():
 		_cooldown_left = cooldown
 		return false
@@ -52,7 +52,7 @@ func execute(owner: Node3D) -> bool:
 	return true
 
 
-func _raycast(owner: Node3D) -> Dictionary:
+func _raycast(caster: Node3D) -> Dictionary:
 	var space_state := get_world_3d().direct_space_state
 	var from := origin_node.global_position
 	var to := from + (-direction_node.global_transform.basis.z) * attack_range
@@ -60,7 +60,7 @@ func _raycast(owner: Node3D) -> Dictionary:
 	var params := PhysicsRayQueryParameters3D.create(from, to)
 	params.collide_with_areas = collide_with_areas
 	params.collide_with_bodies = collide_with_bodies
-	params.exclude = [owner]
+	params.exclude = [caster]
 
 	return space_state.intersect_ray(params)
 

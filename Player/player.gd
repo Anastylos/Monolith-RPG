@@ -11,6 +11,7 @@ const INTERACT_RANGE = 3.0
 @onready var camera_pivot: Node3D = $LookPivot/CameraPivot
 @onready var camera: Camera3D = $LookPivot/CameraPivot/Camera3D
 @onready var attack: Attack = $Attack
+@onready var pause_menu: PauseMenu = $"../PauseMenu"
 
 var pitch := 0.0
 
@@ -22,12 +23,20 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		pause_menu.toggle()
+		return
+	
+	if get_tree().paused:
+		return
+			
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 
 		pitch -= event.relative.y * MOUSE_SENSITIVITY
 		pitch = clamp(pitch, PITCH_MIN, PITCH_MAX)
 		camera_pivot.rotation.x = pitch
+
 
 
 func _physics_process(delta: float) -> void:
