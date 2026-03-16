@@ -14,15 +14,60 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(-116.0504, 208.63469),
 "portrait": "",
-"size": Vector2(250.00012, 394.00006),
+"size": Vector2(250.00027, 394.0006),
+"to_dialog": "",
+"to_node": ["options_node_1"]
+},
+"dialogue_node_2": {
+"char_expand": true,
+"character": "",
+"dialog_key": "FIRST_DIALOG_2",
+"node_index": 2,
+"node_type": "dialogue_node",
+"offset": Vector2(640, -20),
+"portrait": "",
+"size": Vector2(250, 394),
+"to_dialog": "",
+"to_node": ["dialogue_node_4"]
+},
+"dialogue_node_3": {
+"char_expand": true,
+"character": "",
+"dialog_key": "FIRST_DIALOG_3",
+"node_index": 3,
+"node_type": "dialogue_node",
+"offset": Vector2(640, 440),
+"portrait": "",
+"size": Vector2(250, 394.00034),
+"to_dialog": "",
+"to_node": ["dialogue_node_4"]
+},
+"dialogue_node_4": {
+"char_expand": true,
+"character": "",
+"dialog_key": "FIRST_DIALOG_4",
+"node_index": 4,
+"node_type": "dialogue_node",
+"offset": Vector2(1060, 180),
+"portrait": "",
+"size": Vector2(250.00006, 394.00006),
 "to_dialog": "",
 "to_node": ["END"]
+},
+"options_node_1": {
+"node_index": 1,
+"node_type": "options_node",
+"offset": Vector2(180, 220),
+"options_keys": ["FIRST_OPT1_1", "FIRST_OPT1_2"],
+"size": Vector2(250, 379.00003),
+"to_dialog": "",
+"to_node": ["dialogue_node_2", "dialogue_node_3"]
 },
 "start_node_1": {
 "node_index": 1,
 "node_type": "start_node",
 "offset": Vector2(-540, 160),
-"size": Vector2(190.00009, 97.000015),
+"size": Vector2(190.00012, 75.00006),
 "start_id": "FIRST",
 "to_dialog": "",
 "to_node": ["dialogue_node_1"]
@@ -34,6 +79,24 @@ dialogs = {
 "default": "[color=408070ff]What have you done? You awakend what was suposed to sleep. The monolith has tasted your soul. Now it will not stop untill it has consumed you.
 Do you remember who you are and why you are here?[/color]",
 "en": ""
+},
+"FIRST_DIALOG_2": {
+"default": "Maybe it is better this way. Whatever you came here for, you will only find your doom.",
+"en": ""
+},
+"FIRST_DIALOG_3": {
+"default": "Only a fool would seek the Monolith to save their people. Your endevor is doomed, as was mine when I came here. ",
+"en": ""
+},
+"FIRST_DIALOG_4": {
+"default": "Look at the damned that once where my people.",
+"en": ""
+},
+"FIRST_OPT1_1": {
+"default": "Who am I? Where am I?"
+},
+"FIRST_OPT1_2": {
+"default": "I remenmber ... fragments. I need to save my people."
 }
 }
 characters = {
