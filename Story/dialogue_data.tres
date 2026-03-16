@@ -14,7 +14,7 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(-116.0504, 208.63469),
 "portrait": "",
-"size": Vector2(250.00021, 394.00012),
+"size": Vector2(250.00015, 394),
 "to_dialog": "",
 "to_node": ["options_node_1"]
 },
@@ -26,7 +26,7 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(640, -20),
 "portrait": "",
-"size": Vector2(250.00012, 394),
+"size": Vector2(250, 394.00006),
 "to_dialog": "",
 "to_node": ["dialogue_node_4"]
 },
@@ -38,7 +38,7 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(640, 440),
 "portrait": "",
-"size": Vector2(250.00012, 394),
+"size": Vector2(250, 394.00006),
 "to_dialog": "",
 "to_node": ["dialogue_node_4"]
 },
@@ -50,16 +50,16 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(1060, 180),
 "portrait": "",
-"size": Vector2(250, 394.00006),
+"size": Vector2(250.00049, 394.00003),
 "to_dialog": "",
 "to_node": ["END"]
 },
 "options_node_1": {
 "node_index": 1,
 "node_type": "options_node",
-"offset": Vector2(320, 200.05997),
+"offset": Vector2(320, 200.11993),
 "options_keys": ["FIRST_OPT1_1", "FIRST_OPT1_2"],
-"size": Vector2(250, 379.00003),
+"size": Vector2(250.00018, 379.00012),
 "to_dialog": "",
 "to_node": ["dialogue_node_2", "dialogue_node_3"]
 },
@@ -67,7 +67,7 @@ graph_data = {
 "node_index": 1,
 "node_type": "start_node",
 "offset": Vector2(-540, 160),
-"size": Vector2(190.00012, 75),
+"size": Vector2(190.00012, 75.000015),
 "start_id": "FIRST",
 "to_dialog": "",
 "to_node": ["dialogue_node_1"]

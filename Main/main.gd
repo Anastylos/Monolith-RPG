@@ -1,13 +1,12 @@
 extends Node3D
 
 @onready var dialog_player: DialogPlayer = $DialogPlayer
-@onready var player: CharacterBody3D = $Player
 
 func _ready() -> void:
 	# Signale verbinden
 	dialog_player.dialog_started.connect(_on_dialog_started)
 	dialog_player.dialog_ended.connect(_on_dialog_ended)
-
+	
 	# Starte den Dialog
 	dialog_player.start()
 
