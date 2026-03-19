@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://trm25ofed16f"]
 
-[ext_resource type="Script" uid="uid://k4tp81il7bfr" path="res://Main/main.gd" id="1_6aewd"]
+[ext_resource type="Script" path="res://Main/main.gd" id="1_6aewd"]
 [ext_resource type="PackedScene" uid="uid://v86wkqavdp0x" path="res://Player/Player.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://g8u6a2uwcxuj" path="res://Enviroment/enviroment.tscn" id="2_amygn"]
-[ext_resource type="PackedScene" uid="uid://drt1u4wl7jo35" path="res://Enemies/Enemy_basic.tscn" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://ba4u3bcnfvkhu" path="res://Enemies/Enemy_basic.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://cgulkgxthsrkm" path="res://Story/dialog_player.tscn" id="3_u2i7p"]
 [ext_resource type="PackedScene" uid="uid://d0kopskd0mc2c" path="res://UI/pause_menu.tscn" id="4_ps1la"]
 
