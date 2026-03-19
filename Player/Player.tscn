@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://v86wkqavdp0x"]
 
 [ext_resource type="Script" uid="uid://p0typnmssdc6" path="res://Player/player.gd" id="1_q3lat"]
-[ext_resource type="PackedScene" path="res://Attacks/lightning_attack.tscn" id="3_ddoul"]
+[ext_resource type="PackedScene" path="res://Attacks/Lightning/lightning_attack.tscn" id="3_ddoul"]
 [ext_resource type="PackedScene" uid="uid://bjy2axb2xpsdk" path="res://Player/Modular Character Outfits - Fantasy[Standard]/Exports/glTF (Godot-Unreal)/Outfits/Male_Ranger.gltf" id="3_tok1r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]

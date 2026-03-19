@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://phjexog4objw"]
+
+[ext_resource type="Script" uid="uid://b6v4unxjq7l6e" path="res://Attacks/Lightning/lightning_beam.gd" id="1_11wlh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+transparency = 1
+albedo_color = Color(0.47058824, 0.81960785, 1, 0.85)
+emission_enabled = true
+emission = Color(0.47058824, 0.81960785, 1, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+
+[node name="LightningBeam" type="Node3D" unique_id=1165286244]
+script = ExtResource("1_11wlh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2092760134]
+material_override = SubResource("StandardMaterial3D_1")
+mesh = SubResource("BoxMesh_1")
