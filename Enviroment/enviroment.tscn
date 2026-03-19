@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dbe85gs5usxex" path="res://Enviroment/Assets/Materisl_PS_01/4k JPEG/Ground Sidewalk 02/GroundSidewalk02_Base Color.jpg" id="1_8w60s"]
 [ext_resource type="Texture2D" uid="uid://bc2a4qneugoa1" path="res://Enviroment/Assets/Materisl_PS_01/4k JPEG/Ground Sidewalk 02/GroundSidewalk02_Metallic.jpg" id="2_hbpnh"]
-[ext_resource type="PackedScene" uid="uid://sm2t4db00vbr" path="res://Enviroment/monolith_mesh_instance_3d.tscn" id="3_ahwgg"]
+[ext_resource type="PackedScene" uid="uid://sm2t4db00vbr" path="res://Monolith/monolith_mesh_instance_3d.tscn" id="3_ahwgg"]
 [ext_resource type="PackedScene" uid="uid://dnvikeuamtoue" path="res://Enviroment/world_environment.tscn" id="4_qcwx2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_135ne"]

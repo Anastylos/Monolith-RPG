@@ -19,7 +19,7 @@ func interact(_player: Node = null) -> void:
 			randf_range(-1.0, 1.0),
 			0.0,
 			randf_range(-1.0, 1.0)
-		).normalized() * randf_range(2.0, spawn_radius)
+		).normalized() * randf_range(20.0, spawn_radius)
 
 		enemy.global_position = global_position + offset
 
