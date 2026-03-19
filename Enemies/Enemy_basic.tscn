@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://drt1u4wl7jo35"]
+[gd_scene format=3 uid="uid://ba4u3bcnfvkhu"]
 
 [ext_resource type="Script" uid="uid://dxdngdk4qf32o" path="res://Enemies/wander_enemy.gd" id="1_r3c6h"]
 [ext_resource type="PackedScene" uid="uid://dmj30b87tpm4a" path="res://Enemies/Assets/skeletonmonster3dmodel.glb" id="2_dosrv"]
