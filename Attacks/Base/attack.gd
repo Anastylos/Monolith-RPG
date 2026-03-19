@@ -1,6 +1,14 @@
 extends Node3D
 class_name Attack
 
+enum DamageType {
+	NONE,
+	FIRE,
+	ICE,
+	LIGHTNING,
+	SOUL
+}
+
 @export_group("Attack Settings")
 @export var attack_range: float = 3.0
 @export var cooldown: float = 0.3
@@ -12,6 +20,7 @@ class_name Attack
 @export var lingering_duration: float = 0.0
 @export var lingering_falloff: float = 1.0
 @export var damage_tick_rate: float = 0.2
+@export var damage_type: DamageType = DamageType.NONE
 
 @export_group("Raycast Sources")
 @export var origin_node: Node3D
@@ -21,9 +30,15 @@ class_name Attack
 @export var collide_with_areas: bool = true
 @export var collide_with_bodies: bool = true
 
-@export var damage_groups: Array[String] = []
-
 var _cooldown_left: float = 0.0
+
+
+func _ready() -> void:
+	damage_type = _get_default_damage_type()
+
+
+func _get_default_damage_type() -> DamageType:
+	return DamageType.NONE
 
 func _physics_process(delta: float) -> void:
 	if _cooldown_left > 0.0:
@@ -38,18 +53,36 @@ func execute(caster: Node3D) -> bool:
 	if not can_attack():
 		return false
 
-	if origin_node == null or direction_node == null:
-		push_warning("Attack is missing origin_node or direction_node.")
+	if not _validate_nodes():
 		return false
 
-	var hit := _raycast(caster)
-	if hit.is_empty():
+	var hits := _get_hits(caster)
+	if hits.is_empty():
 		_cooldown_left = cooldown
 		return false
 
-	_apply_hit(hit)
+	_process_hits(hits)
 	_cooldown_left = cooldown
 	return true
+
+
+func _validate_nodes() -> bool:
+	if origin_node == null or direction_node == null:
+		push_warning("%s is missing origin_node or direction_node." % name)
+		return false
+	return true
+
+
+func _get_hits(caster: Node3D) -> Array:
+	var hit := _raycast(caster)
+	if hit.is_empty():
+		return []
+	return [hit]
+
+
+func _process_hits(hits: Array) -> void:
+	for hit in hits:
+		_apply_hit(hit)
 
 
 func _raycast(caster: Node3D) -> Dictionary:
@@ -69,8 +102,6 @@ func _apply_hit(hit: Dictionary) -> void:
 	var collider = hit.get("collider")
 	if collider == null:
 		return
-
-	var damage_type := get_damage_type()
 
 	if collider.has_method("take_typed_damage"):
 		collider.take_typed_damage(initial_damage, damage_type)
@@ -92,14 +123,4 @@ func _apply_hit(hit: Dictionary) -> void:
 			damage_tick_rate,
 			damage_type
 		)
-
-
-func get_damage_type() -> DamageTypes.Type:
-	if "fire" in damage_groups:
-		return DamageTypes.Type.FIRE
-	elif "ice" in damage_groups:
-		return DamageTypes.Type.ICE
-	elif "lightning" in damage_groups:
-		return DamageTypes.Type.LIGHTNING
-	else:
-		return DamageTypes.Type.SOUL
+	print("Applying damage type: ", damage_type, " from ", name)

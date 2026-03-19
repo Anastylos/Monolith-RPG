@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://v86wkqavdp0x"]
 
 [ext_resource type="Script" uid="uid://p0typnmssdc6" path="res://Player/player.gd" id="1_q3lat"]
-[ext_resource type="PackedScene" path="res://Attacks/Lightning/lightning_attack.tscn" id="3_ddoul"]
 [ext_resource type="PackedScene" uid="uid://bjy2axb2xpsdk" path="res://Player/Modular Character Outfits - Fantasy[Standard]/Exports/glTF (Godot-Unreal)/Outfits/Male_Ranger.gltf" id="3_tok1r"]
+[ext_resource type="Script" uid="uid://bn1giy0wl5487" path="res://Attacks/Lightning/lightning_attack.gd" id="4_6ysni"]
+[ext_resource type="Script" uid="uid://bofm7d6xu3we8" path="res://Attacks/Shared/attack_controller.gd" id="4_8g4oa"]
+[ext_resource type="Script" uid="uid://4035jmlk31qn" path="res://Attacks/Base/attack.gd" id="5_6ysni"]
+[ext_resource type="PackedScene" uid="uid://phjexog4objw" path="res://Attacks/Lightning/lightning_beam.tscn" id="5_vlldt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
 
@@ -25,4 +28,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4846033, 0)
 [node name="Camera3D" type="Camera3D" parent="LookPivot/CameraPivot" unique_id=685671226]
 transform = Transform3D(1, 0, 0, 0, 0.9147624, 0.40399235, 0, -0.40399235, 0.9147624, 0, 0.32094884, -0.22379029)
 
-[node name="Attack" parent="." unique_id=877467875 instance=ExtResource("3_ddoul")]
+[node name="AttackController" type="Node" parent="." unique_id=945603337 node_paths=PackedStringArray("attack_slots")]
+script = ExtResource("4_8g4oa")
+attack_slots = [NodePath("LightningAttack"), NodePath("FireAttack"), NodePath("IceAttack"), NodePath("SoulAttack")]
+
+[node name="LightningAttack" type="Node3D" parent="AttackController" unique_id=1806674691]
+script = ExtResource("4_6ysni")
+beam_scene = ExtResource("5_vlldt")
+
+[node name="FireAttack" type="Node3D" parent="AttackController" unique_id=158783687]
+script = ExtResource("5_6ysni")
+
+[node name="IceAttack" type="Node3D" parent="AttackController" unique_id=521993022]
+script = ExtResource("5_6ysni")
+
+[node name="SoulAttack" type="Node3D" parent="AttackController" unique_id=291874471]
+script = ExtResource("5_6ysni")

@@ -13,6 +13,7 @@ var damage_mesh: MeshInstance3D
 var _sustained_effects: Array[Dictionary] = []
 var _lingering_effects: Array[Dictionary] = []
 
+
 func _ready() -> void:
 	_setup_stats()
 	_find_damage_mesh()
@@ -28,6 +29,7 @@ func _physics_process(delta: float) -> void:
 func _setup_stats() -> void:
 	if stats == null:
 		stats = EnemyStats.new()
+
 	health = stats.max_health
 
 
@@ -52,26 +54,28 @@ func take_damage(amount: float) -> void:
 	_flash_damage()
 
 
-func take_damage_type(damage_type: DamageTypes.Type) -> void:
+func _on_damage_type_received(damage_type: Attack.DamageType) -> void:
 	match damage_type:
-		DamageTypes.Type.FIRE:
+		Attack.DamageType.FIRE:
 			print("enemy attacked with fire")
-		DamageTypes.Type.ICE:
+		Attack.DamageType.ICE:
 			print("enemy attacked with ice")
-		DamageTypes.Type.LIGHTNING:
+		Attack.DamageType.LIGHTNING:
 			print("enemy attacked with lightning")
-		DamageTypes.Type.SOUL:
+		Attack.DamageType.SOUL:
 			print("enemy attacked with soul")
+		Attack.DamageType.NONE:
+			print("enemy attacked with untyped damage")
 
 
-func take_typed_damage(amount: float, damage_type: DamageTypes.Type) -> void:
+func take_typed_damage(amount: float, damage_type: Attack.DamageType) -> void:
 	var final_amount := amount * _get_damage_multiplier(damage_type)
 	_apply_final_damage(final_amount)
-	take_damage_type(damage_type)
+	_on_damage_type_received(damage_type)
 	_flash_damage()
 
 
-func apply_sustained_damage(dps: float, tick_rate: float, damage_type: DamageTypes.Type) -> void:
+func apply_sustained_damage(dps: float, tick_rate: float, damage_type: Attack.DamageType) -> void:
 	_sustained_effects.append({
 		"dps": dps,
 		"tick_rate": tick_rate,
@@ -85,7 +89,7 @@ func apply_lingering_damage(
 	duration: float,
 	falloff: float,
 	tick_rate: float,
-	damage_type: DamageTypes.Type
+	damage_type: Attack.DamageType
 ) -> void:
 	_lingering_effects.append({
 		"base_dps": dps,
@@ -98,7 +102,7 @@ func apply_lingering_damage(
 	})
 
 
-func clear_sustained_damage_of_type(damage_type: DamageTypes.Type) -> void:
+func clear_sustained_damage_of_type(damage_type: Attack.DamageType) -> void:
 	_sustained_effects = _sustained_effects.filter(
 		func(effect: Dictionary) -> bool:
 			return effect["damage_type"] != damage_type
@@ -110,7 +114,7 @@ func _process_sustained_effects(delta: float) -> void:
 		effect["time_until_tick"] -= delta
 
 		if effect["time_until_tick"] <= 0.0:
-			var damage_type: DamageTypes.Type = effect["damage_type"]
+			var damage_type: Attack.DamageType = effect["damage_type"]
 			var tick_damage: float = effect["dps"] * effect["tick_rate"]
 			take_typed_damage(tick_damage, damage_type)
 			effect["time_until_tick"] = effect["tick_rate"]
@@ -127,7 +131,7 @@ func _process_lingering_effects(delta: float) -> void:
 			var progress: float = 1.0 - (effect["remaining"] / effect["duration"])
 			var fade_multiplier: float = pow(max(1.0 - progress, 0.0), effect["falloff"])
 			var current_dps: float = effect["base_dps"] * fade_multiplier
-			var damage_type: DamageTypes.Type = effect["damage_type"]
+			var damage_type: Attack.DamageType = effect["damage_type"]
 			var tick_damage: float = current_dps * effect["tick_rate"]
 
 			if tick_damage > 0.0:
@@ -142,16 +146,18 @@ func _process_lingering_effects(delta: float) -> void:
 		_lingering_effects.erase(effect)
 
 
-func _get_damage_multiplier(damage_type: DamageTypes.Type) -> float:
+func _get_damage_multiplier(damage_type: Attack.DamageType) -> float:
 	match damage_type:
-		DamageTypes.Type.FIRE:
+		Attack.DamageType.FIRE:
 			return stats.fire_multiplier
-		DamageTypes.Type.ICE:
+		Attack.DamageType.ICE:
 			return stats.ice_multiplier
-		DamageTypes.Type.LIGHTNING:
+		Attack.DamageType.LIGHTNING:
 			return stats.lightning_multiplier
-		DamageTypes.Type.SOUL:
+		Attack.DamageType.SOUL:
 			return stats.soul_multiplier
+		Attack.DamageType.NONE:
+			return 1.0
 		_:
 			return 1.0
 

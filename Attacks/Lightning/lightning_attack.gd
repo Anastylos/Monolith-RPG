@@ -1,52 +1,35 @@
 extends Attack
 class_name LightningAttack
 
+
 @export_group("Lightning")
 @export var beam_count: int = 4
 @export var beam_spread: float = 0.12
 @export var beam_duration: float = 0.08
 @export var beam_scene: PackedScene
 
-func _ready() -> void:
-	attack_range = 10.0
-	cooldown = 0.05
-	initial_damage = 2.0
-	sustained_damage_per_second = 12.0
-	lingering_damage_per_second = 4.0
-	lingering_duration = 1.0
-	lingering_falloff = 1.8
-	damage_tick_rate = 0.2
-	damage_groups = ["lightning"]
+func _get_default_damage_type() -> DamageType:
+	return DamageType.LIGHTNING
+
+func _get_hits(caster: Node3D) -> Array:
+	return _multi_beam_raycast(caster)
 
 
-func execute(caster: Node3D) -> bool:
-	if not can_attack():
-		return false
-
-	if origin_node == null or direction_node == null:
-		push_warning("LightningAttack is missing origin_node or direction_node.")
-		return false
-
-	var hits := _multi_beam_raycast(caster)
-	if hits.is_empty():
-		_cooldown_left = cooldown
-		return false
-
+func _process_hits(hits: Array) -> void:
 	var already_hit := {}
 
 	for hit in hits:
+		_spawn_beam_visual(hit)
+
 		var collider = hit.get("collider")
 		if collider == null:
 			continue
 
-		_spawn_beam_visual(hit)
+		if already_hit.has(collider):
+			continue
 
-		if not already_hit.has(collider):
-			_apply_hit(hit)
-			already_hit[collider] = true
-
-	_cooldown_left = cooldown
-	return true
+		_apply_hit(hit)
+		already_hit[collider] = true
 
 
 func _multi_beam_raycast(caster: Node3D) -> Array:

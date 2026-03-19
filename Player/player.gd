@@ -10,7 +10,7 @@ const INTERACT_RANGE = 3.0
 @onready var look_pivot: Node3D = $LookPivot
 @onready var camera_pivot: Node3D = $LookPivot/CameraPivot
 @onready var camera: Camera3D = $LookPivot/CameraPivot/Camera3D
-@onready var attack: Attack = $Attack
+@onready var attack_controller: AttackController = $AttackController
 @onready var pause_menu: PauseMenu = $"../PauseMenu"
 
 var pitch := 0.0
@@ -19,24 +19,23 @@ var pitch := 0.0
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera.make_current()
-	_configure_attack()
+	_configure_attacks()
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		pause_menu.toggle()
 		return
-	
+
 	if get_tree().paused:
 		return
-			
+
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 
 		pitch -= event.relative.y * MOUSE_SENSITIVITY
 		pitch = clamp(pitch, PITCH_MIN, PITCH_MAX)
 		camera_pivot.rotation.x = pitch
-
 
 
 func _physics_process(delta: float) -> void:
@@ -49,8 +48,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		_try_interact()
 
-	if Input.is_action_just_pressed("attack") and attack != null:
-		attack.execute(self)
+	if Input.is_action_just_pressed("attack") and attack_controller != null:
+		attack_controller.execute_current_attack(self)
 
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -90,13 +89,17 @@ func _try_interact() -> void:
 		print("Hit has no interact()")
 
 
-func _configure_attack() -> void:
-	if attack == null:
-		push_warning("Player is missing Attack node.")
+func _configure_attacks() -> void:
+	if attack_controller == null:
+		push_warning("Player is missing AttackController node.")
 		return
 
-	# Default basic attack to camera-driven raycast if not set in scene.
-	if attack.origin_node == null:
-		attack.origin_node = camera
-	if attack.direction_node == null:
-		attack.direction_node = camera
+	for attack in attack_controller.attack_slots:
+		if attack == null:
+			continue
+
+		if attack.origin_node == null:
+			attack.origin_node = camera
+
+		if attack.direction_node == null:
+			attack.direction_node = camera
