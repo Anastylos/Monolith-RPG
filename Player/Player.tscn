@@ -31,7 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 0.9147624, 0.40399235, 0, -0.40399235, 0.914
 
 [node name="GPUParticles3D" parent="LookPivot/CameraPivot" unique_id=1842434804 instance=ExtResource("7_vlldt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4846033, -2.9802322e-08)
-visible = false
 
 [node name="AttackController" type="Node" parent="." unique_id=945603337 node_paths=PackedStringArray("attack_slots")]
 script = ExtResource("4_8g4oa")
