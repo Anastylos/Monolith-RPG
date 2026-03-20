@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cq0oulwt3ubsn"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iaaab"]
+gravity = Vector3(0, 0, -55)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8bc3i"]
+radius = 0.3
+height = 0.3
+
+[sub_resource type="Skin" id="Skin_ms0h4"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" unique_id=1842434804]
+amount = 30
+lifetime = 0.46
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_iaaab")
+draw_pass_1 = SubResource("SphereMesh_8bc3i")
+draw_skin = SubResource("Skin_ms0h4")
