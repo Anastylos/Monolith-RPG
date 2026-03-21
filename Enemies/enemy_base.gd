@@ -185,5 +185,6 @@ func _flash_damage() -> void:
 
 func die() -> void:
 	print("Enemy died")
+	Talo.events.track("kill")
 	died.emit(self)
 	queue_free()
