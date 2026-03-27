@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://non5seqdpr5k"]
+
+[ext_resource type="Script" uid="uid://c6vwwmi7rq32" path="res://Attacks/Fire/fire_attack.gd" id="1_lk6mm"]
+
+[node name="FireAttack3D" type="Node3D" unique_id=2048203525]
+script = ExtResource("1_lk6mm")

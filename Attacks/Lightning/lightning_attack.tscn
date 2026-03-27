@@ -3,6 +3,6 @@
 [ext_resource type="Script" uid="uid://bn1giy0wl5487" path="res://Attacks/Lightning/lightning_attack.gd" id="1_jebq8"]
 [ext_resource type="PackedScene" uid="uid://phjexog4objw" path="res://Attacks/Lightning/lightning_beam.tscn" id="2_me4gc"]
 
-[node name="Attack" type="Node3D" unique_id=171748501 groups=["lightning"]]
+[node name="LightningAttack3D" type="Node3D" unique_id=171748501 groups=["lightning"]]
 script = ExtResource("1_jebq8")
 beam_scene = ExtResource("2_me4gc")
