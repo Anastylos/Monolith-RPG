@@ -77,6 +77,10 @@ func _configure_lightning_attack() -> void:
 
 	lightning_attack.origin_node = attack_origin
 	lightning_attack.direction_node = attack_origin
+	if lightning_attack is LightningAttack:
+		var enemy_lightning := lightning_attack as LightningAttack
+		enemy_lightning.target_node = player_target
+		enemy_lightning.target_offset = Vector3.UP * 1.0
 
 
 func _process_lightning_attack(delta: float) -> void:
@@ -89,6 +93,7 @@ func _process_lightning_attack(delta: float) -> void:
 
 	if player_target == null:
 		player_target = get_tree().current_scene.get_node_or_null("Player") as Node3D
+		_configure_lightning_attack()
 
 	if player_target != null:
 		lightning_attack.execute(self)
@@ -107,7 +112,7 @@ func _update_attack_targeting() -> void:
 		return
 
 	var target_position_3d := player_target.global_position + Vector3.UP * 1.0
-	attack_origin.look_at(target_position_3d, Vector3.UP, true)
+	attack_origin.look_at(target_position_3d, Vector3.UP)
 
 
 func _reset_lightning_timer() -> void:

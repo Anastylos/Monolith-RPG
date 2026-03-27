@@ -7,6 +7,8 @@ class_name LightningAttack
 @export var beam_spread: float = 0.12
 @export var beam_duration: float = 0.08
 @export var beam_scene: PackedScene
+@export var target_node: Node3D
+@export var target_offset: Vector3 = Vector3.ZERO
 
 func _get_default_damage_type() -> DamageType:
 	return DamageType.LIGHTNING
@@ -38,6 +40,12 @@ func _multi_beam_raycast(caster: Node3D) -> Array:
 	var from := origin_node.global_position
 
 	var forward := -direction_node.global_transform.basis.z
+	if target_node != null:
+		var target_position := target_node.global_position + target_offset
+		var to_target := target_position - from
+		if to_target.length() > 0.001:
+			forward = to_target.normalized()
+
 	var right := direction_node.global_transform.basis.x
 	var up := direction_node.global_transform.basis.y
 

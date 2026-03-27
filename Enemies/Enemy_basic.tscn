@@ -23,8 +23,11 @@ shape = SubResource("CapsuleShape3D_a3cie")
 transform = Transform3D(0.9996523, 0, -0.026368964, 0, 1, 0, 0.026368964, 0, 0.9996523, 0, 0.98678255, 0)
 
 [node name="AttackOrigin" type="Node3D" parent="enemy_CharacterBody3D" unique_id=587310214]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -0.8)
 
 [node name="LightningAttack" type="Node3D" parent="enemy_CharacterBody3D" unique_id=1061804821]
 script = ExtResource("3_0ug7l")
+attack_range = 8.0
+beam_count = 1
+beam_spread = 0.02
 beam_scene = ExtResource("4_c3wo4")
