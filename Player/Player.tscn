@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bofm7d6xu3we8" path="res://Attacks/Shared/attack_controller.gd" id="4_8g4oa"]
 [ext_resource type="Script" uid="uid://4035jmlk31qn" path="res://Attacks/Base/attack.gd" id="5_6ysni"]
 [ext_resource type="PackedScene" uid="uid://phjexog4objw" path="res://Attacks/Lightning/lightning_beam.tscn" id="5_vlldt"]
+[ext_resource type="PackedScene" uid="uid://cq0oulwt3ubsn" path="res://Attacks/Base/gpu_particles_3d.tscn" id="7_vlldt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
 
@@ -27,6 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4846033, 0)
 
 [node name="Camera3D" type="Camera3D" parent="LookPivot/CameraPivot" unique_id=685671226]
 transform = Transform3D(1, 0, 0, 0, 0.9147624, 0.40399235, 0, -0.40399235, 0.9147624, 0, 0.32094884, -0.22379029)
+
+[node name="GPUParticles3D" parent="LookPivot/CameraPivot" unique_id=1842434804 instance=ExtResource("7_vlldt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4846033, -2.9802322e-08)
+visible = false
 
 [node name="AttackController" type="Node" parent="." unique_id=945603337 node_paths=PackedStringArray("attack_slots")]
 script = ExtResource("4_8g4oa")

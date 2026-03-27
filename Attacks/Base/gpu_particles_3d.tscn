@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cq0oulwt3ubsn"]
+
+[ext_resource type="Texture2D" uid="uid://bsjaraiw6nn7e" path="res://Attacks/Assets/1000_F_157339324_SsI8C9a9GmTo37EAaPRJY4d6UYr8AYkT.jpg" id="1_f87b6"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iaaab"]
+angle_min = -246.9
+angle_max = 288.0
+gravity = Vector3(0, 0, -55)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufluk"]
+albedo_texture = ExtResource("1_f87b6")
+
+[sub_resource type="SphereMesh" id="SphereMesh_nvuiq"]
+material = SubResource("StandardMaterial3D_ufluk")
+
+[sub_resource type="Skin" id="Skin_ms0h4"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" unique_id=1842434804]
+lifetime = 0.46
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_iaaab")
+draw_pass_1 = SubResource("SphereMesh_nvuiq")
+draw_skin = SubResource("Skin_ms0h4")

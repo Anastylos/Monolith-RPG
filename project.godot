@@ -21,10 +21,11 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 SproutyDialogs="*uid://c8gxm75j80u8c"
+Talo="*uid://bpmdn8oc34pg7"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/sprouty_dialogs/plugin.cfg")
+enabled=PackedStringArray("res://addons/sprouty_dialogs/plugin.cfg", "res://addons/talo/plugin.cfg")
 
 [filesystem]
 

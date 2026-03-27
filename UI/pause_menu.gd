@@ -34,4 +34,5 @@ func _on_continue_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
+	Talo.events.flush()
 	get_tree().quit()

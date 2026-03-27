@@ -185,5 +185,8 @@ func _flash_damage() -> void:
 
 func die() -> void:
 	print("Enemy died")
+	var timestamp:= str(Time.get_ticks_msec()) #string needed for talo
+	Talo.events.track("kill", {"time": timestamp})
+	Talo.events.flush()
 	died.emit(self)
 	queue_free()
