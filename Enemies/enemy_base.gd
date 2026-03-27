@@ -49,7 +49,12 @@ func _update_enemy(_delta: float) -> void:
 	pass
 
 
+func _on_enemy_damaged(_amount: float, _damage_type: Attack.DamageType) -> void:
+	pass
+
+
 func take_damage(amount: float) -> void:
+	_on_enemy_damaged(amount, Attack.DamageType.NONE)
 	_apply_final_damage(amount)
 	_flash_damage()
 
@@ -69,6 +74,7 @@ func _on_damage_type_received(damage_type: Attack.DamageType) -> void:
 
 
 func take_typed_damage(amount: float, damage_type: Attack.DamageType) -> void:
+	_on_enemy_damaged(amount, damage_type)
 	var final_amount := amount * _get_damage_multiplier(damage_type)
 	_apply_final_damage(final_amount)
 	_on_damage_type_received(damage_type)

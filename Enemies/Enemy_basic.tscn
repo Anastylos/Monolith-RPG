@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dxdngdk4qf32o" path="res://Enemies/wander_enemy.gd" id="1_r3c6h"]
 [ext_resource type="PackedScene" uid="uid://dmj30b87tpm4a" path="res://Enemies/Assets/skeletonmonster3dmodel.glb" id="2_dosrv"]
+[ext_resource type="Script" uid="uid://bn1giy0wl5487" path="res://Attacks/Lightning/lightning_attack.gd" id="3_0ug7l"]
+[ext_resource type="PackedScene" uid="uid://phjexog4objw" path="res://Attacks/Lightning/lightning_beam.tscn" id="4_c3wo4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a3cie"]
 
@@ -10,6 +12,8 @@
 [node name="enemy_CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1977839356]
 script = ExtResource("1_r3c6h")
 model_path = NodePath("skeletonmonster3dmodel")
+attack_origin_path = NodePath("AttackOrigin")
+lightning_attack_path = NodePath("LightningAttack")
 
 [node name="enemy_CollisionShape3D" type="CollisionShape3D" parent="enemy_CharacterBody3D" unique_id=37182542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9939097, 0)
@@ -17,3 +21,10 @@ shape = SubResource("CapsuleShape3D_a3cie")
 
 [node name="skeletonmonster3dmodel" parent="enemy_CharacterBody3D" unique_id=1519451725 instance=ExtResource("2_dosrv")]
 transform = Transform3D(0.9996523, 0, -0.026368964, 0, 1, 0, 0.026368964, 0, 0.9996523, 0, 0.98678255, 0)
+
+[node name="AttackOrigin" type="Node3D" parent="enemy_CharacterBody3D" unique_id=587310214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="LightningAttack" type="Node3D" parent="enemy_CharacterBody3D" unique_id=1061804821]
+script = ExtResource("3_0ug7l")
+beam_scene = ExtResource("4_c3wo4")
