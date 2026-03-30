@@ -1,3 +1,51 @@
 [gd_scene format=3 uid="uid://d4goxgxmoniyb"]
 
+[ext_resource type="Texture2D" uid="uid://dqkce6srxgnrj" path="res://UI/Assets/flame.png" id="1_q3qoy"]
+[ext_resource type="Texture2D" uid="uid://crwr4txxlcqrc" path="res://UI/Assets/frozen-orb.png" id="2_34f4k"]
+[ext_resource type="Texture2D" uid="uid://bmkrdpguj7ypm" path="res://UI/Assets/spark-spirit.png" id="3_umds2"]
+[ext_resource type="Texture2D" uid="uid://bl5bqphlkg6yd" path="res://UI/Assets/laser-sparks.png" id="4_dbl3f"]
+
 [node name="AttackUi" type="Node2D" unique_id=936834797]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1171071811]
+layer = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1963402477]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -68.0
+offset_right = 958.0
+offset_bottom = 444.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="fire_TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=2143787988]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("1_q3qoy")
+
+[node name="ice_TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1933461491]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("2_34f4k")
+
+[node name="soul_TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=388553254]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+texture = ExtResource("3_umds2")
+
+[node name="lightning_TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1853456818]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+texture = ExtResource("4_dbl3f")

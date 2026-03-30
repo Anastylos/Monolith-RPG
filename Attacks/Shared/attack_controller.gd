@@ -40,6 +40,7 @@ func select_attack(index: int) -> void:
 	current_attack_index = index
 	current_attack = attack_slots[index]
 
+	
 	print("Selected attack: ", current_attack.name, " | slot ", index + 1)
 
 
