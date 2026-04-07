@@ -2,6 +2,7 @@ extends Node
 class_name AttackController
 
 @export var attack_slots: Array[Attack] = []
+signal attack_selected(index: int)
 
 var current_attack_index: int = -1
 var current_attack: Attack = null
@@ -40,7 +41,7 @@ func select_attack(index: int) -> void:
 	current_attack_index = index
 	current_attack = attack_slots[index]
 
-	
+	GlobalSignals.emit_signal("global_attack_selected", index)
 	print("Selected attack: ", current_attack.name, " | slot ", index + 1)
 
 
