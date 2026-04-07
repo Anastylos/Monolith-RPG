@@ -9,10 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0qb57mx6sn7f" path="res://UI/attack_ui_new.tscn" id="7_hh5pf"]
 
 [node name="Main" type="Node3D" unique_id=115081074]
-visible = false
 script = ExtResource("1_6aewd")
-
-[node name="PauseMenu" parent="." unique_id=2036089362 instance=ExtResource("4_ps1la")]
 
 [node name="enviroment_Node3D" parent="." unique_id=174781509 instance=ExtResource("2_amygn")]
 
@@ -25,5 +22,8 @@ visible = false
 
 [node name="DialogPlayer" parent="." unique_id=1308552748 instance=ExtResource("3_u2i7p")]
 process_mode = 2
+
+[node name="PauseMenu" parent="." unique_id=2036089362 instance=ExtResource("4_ps1la")]
+visible = false
 
 [node name="CanvasLayer" parent="." unique_id=1335021846 instance=ExtResource("7_hh5pf")]

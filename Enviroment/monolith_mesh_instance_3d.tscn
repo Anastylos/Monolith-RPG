@@ -4,9 +4,12 @@
 [ext_resource type="Script" uid="uid://tfd3s2y0mrb6" path="res://Enviroment/monolith_static_body_3d.gd" id="1_htcwa"]
 [ext_resource type="PackedScene" uid="uid://ba4u3bcnfvkhu" path="res://Enemies/Enemy_basic.tscn" id="2_ss5xb"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gwrkf"]
+load_path = "res://.godot/imported/bluish-black-stone-textured-background.jpg-1a23bc08a198b49514c0b49f7df6a7d7.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbpnh"]
 albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
-albedo_texture = ExtResource("1_gwrkf")
+albedo_texture = SubResource("CompressedTexture2D_gwrkf")
 
 [sub_resource type="BoxMesh" id="BoxMesh_135ne"]
 material = SubResource("StandardMaterial3D_hbpnh")
@@ -28,65 +31,4 @@ script = ExtResource("1_htcwa")
 enemy_scene = ExtResource("2_ss5xb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=853147393]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ahwgg")
-
-[node name="OmniLight3D" parent="." unique_id=1085996460]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10314572, 4.269002, 2.7723055)
-
-[node name="OmniLight3D5" parent="." unique_id=919881456]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.349494, 2.7927527)
-
-[node name="OmniLight3D5" parent="OmniLight3D5" unique_id=1071108240]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
-
-[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D5" unique_id=1029393179]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
-
-[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D5/OmniLight3D5" unique_id=153472560]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
-
-[node name="OmniLight3D" parent="OmniLight3D5" unique_id=899441180]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6028738, 1.806715, -3.6352339)
-
-[node name="OmniLight3D6" parent="OmniLight3D5" unique_id=1215869242]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1734467, -0.11279297, -3.4025984)
-
-[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D6" unique_id=15653784]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
-
-[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D6/OmniLight3D5" unique_id=1450876917]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
-
-[node name="OmniLight3D5" parent="OmniLight3D5/OmniLight3D6/OmniLight3D5/OmniLight3D5" unique_id=1122145400]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.971077, -0.052793026)
-
-[node name="OmniLight3D2" parent="." unique_id=1068831621]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7772782, 4.5995445, -2.4904509)
-
-[node name="OmniLight3D2" parent="OmniLight3D2" unique_id=336311701]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54653764, -2.1333456, 0.048096657)
-
-[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D2" unique_id=1922484395]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.023145, -2.1333456, 0.048096657)
-
-[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D2/OmniLight3D2" unique_id=1731514331]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59906363, -2.1333456, 0.048096657)
-
-[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D2/OmniLight3D2/OmniLight3D2" unique_id=933968675]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13068986, -2.1333456, 0.048096657)
-
-[node name="OmniLight3D3" parent="OmniLight3D2" unique_id=435757390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2181435, -0.86356163, -0.09464979)
-
-[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3" unique_id=1573814305]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54653764, -2.1333456, 0.048096657)
-
-[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3/OmniLight3D2" unique_id=1167470537]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.023145, -2.1333456, 0.048096657)
-
-[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3/OmniLight3D2/OmniLight3D2" unique_id=1392064784]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59906363, -2.1333456, 0.048096657)
-
-[node name="OmniLight3D2" parent="OmniLight3D2/OmniLight3D3/OmniLight3D2/OmniLight3D2/OmniLight3D2" unique_id=543797905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13068986, -2.1333456, 0.048096657)
