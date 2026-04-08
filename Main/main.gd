@@ -4,6 +4,7 @@ extends Node3D
 @export var identifier: String
 
 @onready var dialog_player: DialogPlayer = $DialogPlayer
+@onready var timestamp:= str(Time.get_ticks_msec()) #string needed for talo
 
 func _ready() -> void:
 	var random_ID:=str(RandomNumberGenerator)
@@ -19,6 +20,10 @@ func first_dialog() -> void:
 
 func _on_dialog_started() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Talo.events.track("dialog_start", {"time": timestamp})
+	Talo.events.flush()
 
 func _on_dialog_ended() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Talo.events.track("dialog_start", {"time": timestamp})
+	Talo.events.flush()

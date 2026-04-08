@@ -26,8 +26,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 alignment = 1
 
-[node name="fire_TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1718821876]
+[node name="lightning_TextureRect4" type="TextureRect" parent="HBoxContainer" unique_id=1178532483]
 modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+texture = ExtResource("5_jcs1p")
+
+[node name="fire_TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1718821876]
+modulate = Color(1, 1, 1, 0.99607843)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -39,11 +44,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("3_wd1f4")
-
-[node name="lightning_TextureRect4" type="TextureRect" parent="HBoxContainer" unique_id=1178532483]
-modulate = Color(1, 1, 1, 0.39215687)
-layout_mode = 2
-texture = ExtResource("5_jcs1p")
 
 [node name="soul_TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=1473975315]
 modulate = Color(1, 1, 1, 0.39215687)

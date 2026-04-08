@@ -23,6 +23,8 @@ signal died()
 @onready var attack_controller: AttackController = $AttackController
 @onready var pause_menu: PauseMenu = $"../PauseMenu"
 
+@onready var timestamp:= str(Time.get_ticks_msec()) #string needed for talo
+
 var pitch := 0.0
 var health: float = 0.0
 var _sustained_effects: Array[Dictionary] = []
@@ -191,6 +193,7 @@ func _apply_final_damage(amount: float) -> void:
 		die()
 
 
+
 func _process_sustained_effects(delta: float) -> void:
 	for effect in _sustained_effects:
 		effect["time_until_tick"] -= delta
@@ -230,6 +233,8 @@ func _process_lingering_effects(delta: float) -> void:
 
 func die() -> void:
 	if _is_dead:
+		Talo.events.track("dialog_start", {"time": timestamp})
+		Talo.events.flush()
 		return
 
 	_is_dead = true
