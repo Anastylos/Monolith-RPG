@@ -25,5 +25,5 @@ func _on_dialog_started() -> void:
 
 func _on_dialog_ended() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Talo.events.track("dialog_start", {"time": timestamp})
+	Talo.events.track("dialog_end", {"time": timestamp})
 	Talo.events.flush()

@@ -233,7 +233,7 @@ func _process_lingering_effects(delta: float) -> void:
 
 func die() -> void:
 	if _is_dead:
-		Talo.events.track("dialog_start", {"time": timestamp})
+		Talo.events.track("player_died", {"time": timestamp})
 		Talo.events.flush()
 		return
 
