@@ -22,7 +22,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 SproutyDialogs="*uid://c8gxm75j80u8c"
 Talo="*uid://bpmdn8oc34pg7"
-GlobalSignals="*uid://d0xela8cpswxi"
+GlobalSignals="*uid://blckuc05hgwbm"
 
 [editor_plugins]
 
