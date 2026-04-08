@@ -2,12 +2,9 @@
 
 [ext_resource type="Script" uid="uid://4035jmlk31qn" path="res://Attacks/Base/attack.gd" id="1_q7075"]
 [ext_resource type="PackedScene" uid="uid://cq0oulwt3ubsn" path="res://Attacks/Base/gpu_particles_3d.tscn" id="2_8bc3i"]
-[ext_resource type="PackedScene" uid="uid://d4goxgxmoniyb" path="res://UI/attack_ui.tscn" id="3_ms0h4"]
 
 [node name="Attack" type="Node3D" unique_id=877467875 groups=["fire", "ice", "lightning"]]
 script = ExtResource("1_q7075")
 
 [node name="GPUParticles3D" parent="." unique_id=1842434804 instance=ExtResource("2_8bc3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1920929e-07, 0)
-
-[node name="AttackUi" parent="." unique_id=936834797 instance=ExtResource("3_ms0h4")]
