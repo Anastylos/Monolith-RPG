@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://vaghrdtp3jmo"]
+
+[ext_resource type="ArrayMesh" uid="uid://c7knu6cy476mf" path="res://Attacks/Lightning/thunder_editable.tres" id="1_81hts"]
+
+[sub_resource type="Gradient" id="Gradient_jdmx6"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bhpv6"]
+gradient = SubResource("Gradient_jdmx6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ewos"]
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_bhpv6")
+
+[node name="ThunderAttack" type="Node3D" unique_id=56414504]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=996381855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.038977, 1.2322278, 0.01066339)
+amount = 1
+lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_6ewos")
+draw_pass_1 = ExtResource("1_81hts")

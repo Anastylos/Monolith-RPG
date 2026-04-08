@@ -1,0 +1,39 @@
+[gd_resource type="VisualShader" format=3 uid="uid://cr2qvj6mmcp71"]
+
+[ext_resource type="Texture2D" uid="uid://by41j3ypxpr7b" path="res://Attacks/Lightning/liquid_circle_texture.png" id="1_md4lt"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_4gtxb"]
+texture = ExtResource("1_md4lt")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wr7aa"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_c3jd4"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_n3nnh"]
+parameter_name = "mark_colour"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_gwvob"]
+output_port_for_preview = 0
+texture = ExtResource("1_md4lt")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_l8qum"]
+input_name = "color"
+
+[resource]
+flags/unshaded = true
+nodes/vertex/2/node = SubResource("VisualShaderNodeTexture_gwvob")
+nodes/vertex/2/position = Vector2(20, 220)
+nodes/vertex/3/node = SubResource("VisualShaderNodeInput_l8qum")
+nodes/vertex/3/position = Vector2(60, 80)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_4gtxb")
+nodes/fragment/2/position = Vector2(-300, 360)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_wr7aa")
+nodes/fragment/3/position = Vector2(-320, 120)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatOp_c3jd4")
+nodes/fragment/4/position = Vector2(140, 220)
+nodes/fragment/5/node = SubResource("VisualShaderNodeColorParameter_n3nnh")
+nodes/fragment/5/position = Vector2(60, 0)
+nodes/fragment/connections = PackedInt32Array(4, 0, 0, 1, 3, 0, 4, 0, 2, 0, 4, 1, 5, 0, 0, 0)

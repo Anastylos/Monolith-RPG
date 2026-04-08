@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crwr4txxlcqrc"
-path.s3tc="res://.godot/imported/frozen-orb.png-3aac1e23fea3162d705c4adc8a9d4c11.s3tc.ctex"
+uid="uid://by41j3ypxpr7b"
+path.s3tc="res://.godot/imported/liquid_circle_texture.png-68c21efee467e136aed7d5ac5c861d8f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://UI/Assets/frozen-orb.png"
-dest_files=["res://.godot/imported/frozen-orb.png-3aac1e23fea3162d705c4adc8a9d4c11.s3tc.ctex"]
+source_file="res://Attacks/Lightning/liquid_circle_texture.png"
+dest_files=["res://.godot/imported/liquid_circle_texture.png-68c21efee467e136aed7d5ac5c861d8f.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,56 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dlne4ub2r4sgg"]
+
+[ext_resource type="Texture2D" uid="uid://dgtxhiidxgcug" path="res://Attacks/Lightning/expansive_texture.png" id="1_d0hn4"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_h85ck"]
+output_port_for_preview = 0
+expanded_output_ports = [0]
+texture = ExtResource("1_d0hn4")
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_wl20i"]
+function = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_d1mbm"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_jpoa2"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 1)]
+op_type = 0
+operator = 2
+
+[sub_resource type="Gradient" id="Gradient_a8s7r"]
+offsets = PackedFloat32Array(0, 0.51714283, 0.79142857, 0.9742857)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.654232, 0.6542321, 0.65423197, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k27p3"]
+gradient = SubResource("Gradient_a8s7r")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_8rh3w"]
+texture = SubResource("GradientTexture2D_k27p3")
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_ljv6s"]
+default_input_values = [0, 0.0, 1, 3.865]
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_fy20h"]
+parameter_name = "Wave_Colour"
+default_value_enabled = true
+
+[resource]
+nodes/fragment/0/position = Vector2(400, 160)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_h85ck")
+nodes/fragment/2/position = Vector2(-140, 280)
+nodes/fragment/3/node = SubResource("VisualShaderNodeUVFunc_wl20i")
+nodes/fragment/3/position = Vector2(-533.53015, 257.61002)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_d1mbm")
+nodes/fragment/4/position = Vector2(-1240, 240)
+nodes/fragment/5/node = SubResource("VisualShaderNodeVectorOp_jpoa2")
+nodes/fragment/5/position = Vector2(-900, 280)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture_8rh3w")
+nodes/fragment/6/position = Vector2(-500, 580)
+nodes/fragment/7/node = SubResource("VisualShaderNodeFloatOp_ljv6s")
+nodes/fragment/7/position = Vector2(180, 800)
+nodes/fragment/8/node = SubResource("VisualShaderNodeColorParameter_fy20h")
+nodes/fragment/8/position = Vector2(-40, 40)
+nodes/fragment/connections = PackedInt32Array(5, 0, 3, 2, 6, 0, 7, 1, 3, 0, 2, 0, 2, 1, 7, 0, 8, 0, 0, 0, 7, 0, 0, 1)
