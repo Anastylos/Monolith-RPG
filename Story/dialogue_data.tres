@@ -5,6 +5,41 @@
 [resource]
 script = ExtResource("1_11vo8")
 graph_data = {
+"DEATH": {
+"dialogue_node_6": {
+"char_expand": true,
+"character": "",
+"dialog_key": "DEATH_DIALOG_6",
+"node_index": 6,
+"node_type": "dialogue_node",
+"offset": Vector2(-120, 640),
+"portrait": "",
+"size": Vector2(250.00024, 394),
+"to_dialog": "",
+"to_node": ["dialogue_node_7"]
+},
+"dialogue_node_7": {
+"char_expand": true,
+"character": "",
+"dialog_key": "DEATH_DIALOG_7",
+"node_index": 7,
+"node_type": "dialogue_node",
+"offset": Vector2(260, 640),
+"portrait": "",
+"size": Vector2(250, 394),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"start_node_2": {
+"node_index": 2,
+"node_type": "start_node",
+"offset": Vector2(-423.19824, 756.6107),
+"size": Vector2(190, 75),
+"start_id": "DEATH",
+"to_dialog": "",
+"to_node": ["dialogue_node_6"]
+}
+},
 "FIRST": {
 "dialogue_node_1": {
 "char_expand": true,
@@ -14,7 +49,7 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(-116.0504, 208.63469),
 "portrait": "",
-"size": Vector2(250.00049, 394),
+"size": Vector2(250.00055, 394),
 "to_dialog": "",
 "to_node": ["options_node_1"]
 },
@@ -26,7 +61,7 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(640, -20),
 "portrait": "",
-"size": Vector2(250.00024, 394),
+"size": Vector2(250.00012, 394),
 "to_dialog": "",
 "to_node": ["dialogue_node_4"]
 },
@@ -38,7 +73,7 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(640, 440),
 "portrait": "",
-"size": Vector2(250.00024, 394),
+"size": Vector2(250.00012, 394),
 "to_dialog": "",
 "to_node": ["dialogue_node_4"]
 },
@@ -50,6 +85,18 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(1060, 180),
 "portrait": "",
+"size": Vector2(250.00085, 394.00003),
+"to_dialog": "",
+"to_node": ["dialogue_node_5"]
+},
+"dialogue_node_5": {
+"char_expand": true,
+"character": "",
+"dialog_key": "FIRST_DIALOG_5",
+"node_index": 5,
+"node_type": "dialogue_node",
+"offset": Vector2(1400, 120),
+"portrait": "",
 "size": Vector2(250.00049, 394),
 "to_dialog": "",
 "to_node": ["END"]
@@ -57,9 +104,9 @@ graph_data = {
 "options_node_1": {
 "node_index": 1,
 "node_type": "options_node",
-"offset": Vector2(320, 200.29984),
+"offset": Vector2(320, 200.41977),
 "options_keys": ["FIRST_OPT1_1", "FIRST_OPT1_2"],
-"size": Vector2(250.0003, 378.99997),
+"size": Vector2(250.00024, 379.00012),
 "to_dialog": "",
 "to_node": ["dialogue_node_2", "dialogue_node_3"]
 },
@@ -67,7 +114,7 @@ graph_data = {
 "node_index": 1,
 "node_type": "start_node",
 "offset": Vector2(-540, 160),
-"size": Vector2(190.00012, 75),
+"size": Vector2(190.00009, 75.00003),
 "start_id": "FIRST",
 "to_dialog": "",
 "to_node": ["dialogue_node_1"]
@@ -75,8 +122,16 @@ graph_data = {
 }
 }
 dialogs = {
+"DEATH_DIALOG_6": {
+"default": "[color=ff0000ff]YOU DIED[/color]",
+"en": ""
+},
+"DEATH_DIALOG_7": {
+"default": ">>press left mouse or enter to start a new game<<",
+"en": ""
+},
 "FIRST_DIALOG_1": {
-"default": "[color=408070ff]What have you done? You awakend what was suposed to sleep. The monolith has tasted your soul. Now it will not stop untill it has consumed you.
+"default": "[color=408070ff]What have you done? You awakened what was supposed to sleep. The monolith has tasted your soul. Now it will not stop until it has consumed you.
 Do you remember who you are and why you are here?[/color]",
 "en": ""
 },
@@ -92,6 +147,13 @@ Do you remember who you are and why you are here?[/color]",
 "default": "[color=408070ff]Look at these damned that once where my people.[/color]",
 "en": ""
 },
+"FIRST_DIALOG_5": {
+"default": ">>use E to activate the monolith<<
+>>use left mouse to attack the enemy<<
+>>use 1,2,3 and 4 to switch between attacks<<
+",
+"en": ""
+},
 "FIRST_OPT1_1": {
 "default": "Who am I? Where am I?"
 },
@@ -100,5 +162,6 @@ Do you remember who you are and why you are here?[/color]",
 }
 }
 characters = {
+"DEATH": {},
 "FIRST": {}
 }

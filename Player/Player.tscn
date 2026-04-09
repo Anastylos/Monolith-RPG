@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://v86wkqavdp0x"]
 
 [ext_resource type="Script" uid="uid://p0typnmssdc6" path="res://Player/player.gd" id="1_q3lat"]
-[ext_resource type="PackedScene" uid="uid://bjy2axb2xpsdk" path="res://Player/Modular Character Outfits - Fantasy[Standard]/Exports/glTF (Godot-Unreal)/Outfits/Male_Ranger.gltf" id="3_tok1r"]
 [ext_resource type="Script" uid="uid://bn1giy0wl5487" path="res://Attacks/Lightning/lightning_attack.gd" id="4_6ysni"]
 [ext_resource type="Script" uid="uid://bofm7d6xu3we8" path="res://Attacks/Shared/attack_controller.gd" id="4_8g4oa"]
 [ext_resource type="Script" uid="uid://4035jmlk31qn" path="res://Attacks/Base/attack.gd" id="5_6ysni"]
@@ -16,10 +15,6 @@ script = ExtResource("1_q3lat")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=38266501]
 transform = Transform3D(1, 0, 0, 0, 0.9767734, -0.21427506, 0, 0.21427506, 0.9767734, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_q3lat")
-
-[node name="Male_Ranger" parent="." unique_id=770273856 instance=ExtResource("3_tok1r")]
-transform = Transform3D(-0.99959135, 0, 0.028584551, 0, 1, 0, -0.028584551, 0, -0.99959135, 0, 0, 0)
-visible = false
 
 [node name="LookPivot" type="Node3D" parent="." unique_id=825987593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4846033, 0)

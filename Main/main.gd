@@ -5,10 +5,11 @@ extends Node3D
 
 @onready var dialog_player: DialogPlayer = $DialogPlayer
 @onready var timestamp:= str(Time.get_ticks_msec()) #string needed for talo
+@onready var random_ID:=str(RandomNumberGenerator)
 
 func _ready() -> void:
 	var random_ID:=str(RandomNumberGenerator)
-	Talo.players.identify("demo0.1",random_ID)
+	Talo.players.identify("demo0.9.5",random_ID)
 	first_dialog()
 	
 func first_dialog() -> void:
