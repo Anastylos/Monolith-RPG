@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bofm7d6xu3we8" path="res://Attacks/Shared/attack_controller.gd" id="4_8g4oa"]
 [ext_resource type="Script" uid="uid://4035jmlk31qn" path="res://Attacks/Base/attack.gd" id="5_6ysni"]
 [ext_resource type="PackedScene" uid="uid://phjexog4objw" path="res://Attacks/Lightning/lightning_beam.tscn" id="5_vlldt"]
+[ext_resource type="PackedScene" uid="uid://cgulkgxthsrkm" path="res://Story/dialog_player.tscn" id="7_s1rgi"]
 [ext_resource type="PackedScene" uid="uid://cq0oulwt3ubsn" path="res://Attacks/Base/gpu_particles_3d.tscn" id="7_vlldt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
@@ -44,3 +45,5 @@ script = ExtResource("5_6ysni")
 
 [node name="SoulAttack" type="Node3D" parent="AttackController" unique_id=291874471]
 script = ExtResource("5_6ysni")
+
+[node name="DialogPlayer" parent="." unique_id=1308552748 instance=ExtResource("7_s1rgi")]
